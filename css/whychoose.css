@@ -1,0 +1,179 @@
+/* ===============================
+   WHY CHOOSE FIRSTFLY
+================================ */
+
+.why-choose {
+  position: relative;
+  padding: 100px 20px;
+  color: #fff;
+  overflow: hidden;
+
+  /* IMAGE + OVERLAY */
+  background:
+    radial-gradient(circle at top left, rgba(139,92,246,0.18), transparent 90%),
+    radial-gradient(circle at bottom right, rgba(103,58,183,0.14), transparent 95%),
+    linear-gradient(rgba(14,15,22,0.85), rgba(14,15,22,0.85)),
+    url("../assets/images/whychoose.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* dotted bg */
+.why-choose::before {
+  content: '';
+  position: absolute;
+  inset: -50px;
+  background: radial-gradient(circle, rgba(139,92,246,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.section-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #a78bfa;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  margin: 15px 0;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* ===============================
+   GRID
+================================ */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===============================
+   CARD
+================================ */
+
+.feature-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 40px 25px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 0 18px rgba(139,92,246,0.25);
+  transform: translateY(30px) scale(0.95);
+  opacity: 0;
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease,
+    opacity 0.6s ease;
+}
+
+/* Scroll reveal */
+.feature-card.visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Hover + Active */
+.feature-card:hover,
+.feature-card.active {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 0 35px rgba(139,92,246,0.55);
+}
+
+/* ===============================
+   ICON (FIXED)
+================================ */
+
+.icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* FIX: animate img, not .icon */
+.feature-card:hover .icon img,
+.feature-card.active .icon img {
+  transform: scale(1.25) rotate(6deg);
+  filter: drop-shadow(0 0 12px rgba(139,92,246,0.9));
+}
+
+/* ===============================
+   TEXT
+================================ */
+
+.feature-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.feature-desc {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.6;
+  opacity: 1;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Reveal text */
+.feature-card:hover .feature-desc,
+.feature-card.active .feature-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .feature-card {
+    padding: 30px 20px;
+  }
+}

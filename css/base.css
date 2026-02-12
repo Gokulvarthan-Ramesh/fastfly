@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+
+    /* Purple–Black Glassmorphism Background */
+    background:
+        radial-gradient(
+            1000px 500px at 15% -10%,
+            rgba(168, 85, 247, 0.10),
+            transparent 45%
+        ),
+        radial-gradient(
+            800px 400px at 85% 25%,
+            rgba(99, 102, 241, 0.08),
+            transparent 45%
+        ),
+        radial-gradient(
+            600px 300px at 50% 80%,
+            rgba(236, 72, 153, 0.05),
+            transparent 50%
+        ),
+        linear-gradient(
+            180deg,
+            #05040a 0%,
+            #07060f 45%,
+            #04030a 100%
+        );
+
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+
+/* Buttons */
+.btn {
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.primary {
+    background: #fff;
+    color: #000;
+}
+
+.primary:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+.ghost {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px) scale(0.98);
+    transition: 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.delay {
+    transition-delay: 0.2s;
+}
+
+.delay-2 {
+    transition-delay: 0.4s;
+}

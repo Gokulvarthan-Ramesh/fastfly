@@ -1,0 +1,177 @@
+/* =========================
+   TRUST STRIP – V4
+========================= */
+
+.trust-strip {
+  width: 100%;
+  padding: 30px 0;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(140% 90% at 50% 0%,
+      rgba(139, 0, 255, 0.18),
+      transparent 60%),
+    linear-gradient(
+      to right,
+      #0a0a14,
+      #120922,
+      #0a0a14
+    );
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
+
+.trust-track {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  width: max-content;
+  animation: trustScroll 32s linear infinite;
+  will-change: transform;
+}
+
+/* =========================
+   TRUST ITEM
+========================= */
+
+.trust-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 14px 28px;
+  border-radius: 999px;
+  white-space: nowrap;
+
+  background:
+    linear-gradient(135deg,
+      rgba(139,0,255,0.2),
+      rgba(192,132,252,0.12));
+
+  backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(192,132,252,0.35);
+
+  box-shadow:
+    0 10px 35px rgba(139,0,255,0.18),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.trust-item strong {
+  font-weight: 800;
+  color: #c084fc;
+}
+
+.trust-item span {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.9);
+}
+
+/* Hover */
+.trust-item:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow:
+    0 18px 50px rgba(139,0,255,0.35);
+}
+
+/* Highlight */
+.trust-item.highlight {
+  background:
+    linear-gradient(135deg,
+      rgba(139,0,255,0.6),
+      rgba(192,132,252,0.45));
+  box-shadow:
+    0 0 45px rgba(139,0,255,0.7);
+}
+
+/* Pulse for numbers */
+.trust-item.pulse strong {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* =========================
+   SHINE EFFECT
+========================= */
+
+.shine {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%);
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.25),
+      transparent
+    );
+  animation: shineMove 4.5s ease-in-out infinite;
+}
+
+.trust-item:hover .shine {
+  animation-duration: 1.2s;
+}
+
+/* =========================
+   DOT
+========================= */
+
+.trust-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(192,132,252,0.75);
+  box-shadow: 0 0 10px rgba(192,132,252,0.8);
+  flex-shrink: 0;
+}
+
+/* Pause scroll */
+.trust-strip:hover .trust-track {
+  animation-play-state: paused;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes trustScroll {
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-50%,0,0); }
+}
+
+@keyframes shineMove {
+  0%   { transform: translateX(-120%); }
+  40%  { transform: translateX(120%); }
+  100% { transform: translateX(120%); }
+}
+
+@keyframes pulseGlow {
+  0%,100% { text-shadow: 0 0 8px rgba(192,132,252,0.4); }
+  50%     { text-shadow: 0 0 18px rgba(192,132,252,0.9); }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .trust-item {
+    padding: 12px 22px;
+  }
+  .trust-item span {
+    font-size: 0.85rem;
+  }
+}
