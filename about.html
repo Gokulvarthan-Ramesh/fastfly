@@ -8,6 +8,17 @@
     <meta name="theme-color" content="#7C3AED">
     <meta name="google-site-verification" content="dB2nESj71mLyiPJ5g1iQ_E08Dq26KBDhYDoXe0FTSxI">
 
+    <!-- Performance: Preconnect & DNS Prefetch -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+    <!-- Language & PWA -->
+    <link rel="alternate" hreflang="en" href="https://firstflydigital.com/about.html">
+    <link rel="alternate" hreflang="x-default" href="https://firstflydigital.com/about.html">
+    <link rel="manifest" href="manifest.json">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SDKWKEQKKB"></script>
     <script>
@@ -19,35 +30,65 @@
     </script>
 
     <!-- SEO Meta -->
-    <title>About Us | FIRST FlY Digital Solution — Our Story &amp; Vision</title>
+    <title>About Us | FIRST FlY Digital Solution — Our Story, Mission & Vision</title>
     <meta name="description"
-        content="Learn about FIRST FlYDigital Solution — a premium digital engineering studio blending design psychology, conversion science, and performance optimization.">
+        content="Learn about FIRST FlY Digital Solution — a premium digital engineering studio blending design psychology, conversion science, and performance optimization. 50+ projects, 98% satisfaction.">
+    <meta name="keywords"
+        content="about FIRST FlY Digital Solution, digital agency story, web design company, premium website developers, design psychology, conversion optimization, digital engineering studio">
+    <meta name="author" content="FIRST FlY Digital Solution">
     <link rel="canonical" href="https://firstflydigital.com/about.html">
 
     <!-- Open Graph -->
+    <meta property="og:site_name" content="FIRST FlY Digital Solution">
+    <meta property="og:locale" content="en_US">
     <meta property="og:title" content="About Us | FIRST FlY Digital Solution">
     <meta property="og:description"
         content="We engineer digital experiences using design psychology, conversion science, and performance optimization.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://firstflydigital.com/about.html">
     <meta property="og:image" content="https://firstflydigital.com/assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="About FIRST FlY Digital Solution">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@firstflydigital">
     <meta name="twitter:title" content="About Us | FIRST FlY Digital Solution">
     <meta name="twitter:description"
         content="We engineer digital experiences using design psychology, conversion science, and performance optimization.">
+    <meta name="twitter:image" content="https://firstflydigital.com/assets/images/og-image.png">
+    <meta name="twitter:image:alt" content="About FIRST FlY Digital Solution">
 
-    <!-- Structured Data -->
+    <!-- Structured Data: AboutPage -->
     <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About FIRST FlYDigital Solution",
-    "description": "Premium digital engineering studio blending design psychology, conversion science, and performance optimization.",
-    "url": "https://firstflydigital.com/about.html"
-  }
-  </script>
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About FIRST FlY Digital Solution",
+        "description": "Premium digital engineering studio blending design psychology, conversion science, and performance optimization.",
+        "url": "https://firstflydigital.com/about.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "FIRST FlY Digital Solution",
+            "url": "https://firstflydigital.com",
+            "email": "hello@firstflydigital.com",
+            "telephone": "+919025676853"
+        }
+    }
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://firstflydigital.com/"},
+            {"@type": "ListItem", "position": 2, "name": "About Us", "item": "https://firstflydigital.com/about.html"}
+        ]
+    }
+    </script>
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">

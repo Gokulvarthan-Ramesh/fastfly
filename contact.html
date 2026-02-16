@@ -8,6 +8,17 @@
     <meta name="theme-color" content="#7C3AED">
     <meta name="google-site-verification" content="dB2nESj71mLyiPJ5g1iQ_E08Dq26KBDhYDoXe0FTSxI">
 
+    <!-- Performance: Preconnect & DNS Prefetch -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+    <!-- Language & PWA -->
+    <link rel="alternate" hreflang="en" href="https://firstflydigital.com/contact.html">
+    <link rel="alternate" hreflang="x-default" href="https://firstflydigital.com/contact.html">
+    <link rel="manifest" href="manifest.json">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SDKWKEQKKB"></script>
     <script>
@@ -19,22 +30,71 @@
     </script>
 
     <!-- SEO Meta -->
-    <title>Contact | FIRST FlY Digital Solution — Let's Build Something Extraordinary</title>
+    <title>Contact Us | FIRST FlY Digital Solution — Get a Free Quote</title>
     <meta name="description"
-        content="Get in touch with FIRST FlYDigital Solution. Whether you need a premium static website, 3D integration, or SEO optimization — let's discuss your project.">
+        content="Get in touch with FIRST FlY Digital Solution. Request a free quote for website development, graphic design, video editing, SEO, or digital marketing services. We respond within 24 hours.">
+    <meta name="keywords"
+        content="contact FIRST FlY Digital, get a quote, hire web developer, website development inquiry, digital marketing consultation, free SEO consultation, contact digital agency">
+    <meta name="author" content="FIRST FlY Digital Solution">
     <link rel="canonical" href="https://firstflydigital.com/contact.html">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Contact | FIRST FlY Digital Solution">
-    <meta property="og:description" content="Get in touch — let's build something extraordinary for your brand.">
+    <meta property="og:site_name" content="FIRST FlY Digital Solution">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Contact Us | FIRST FlY Digital Solution — Get a Free Quote">
+    <meta property="og:description"
+        content="Get in touch — let's build something extraordinary for your brand. Free consultation available.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://firstflydigital.com/contact.html">
     <meta property="og:image" content="https://firstflydigital.com/assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Contact FIRST FlY Digital Solution">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact | FIRST FlY Digital Solution">
+    <meta name="twitter:site" content="@firstflydigital">
+    <meta name="twitter:title" content="Contact Us | FIRST FlY Digital Solution">
     <meta name="twitter:description" content="Get in touch — let's build something extraordinary for your brand.">
+    <meta name="twitter:image" content="https://firstflydigital.com/assets/images/og-image.png">
+    <meta name="twitter:image:alt" content="Contact FIRST FlY Digital Solution">
+
+    <!-- Structured Data: ContactPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact FIRST FlY Digital Solution",
+        "description": "Get in touch for website development, graphic design, video editing, SEO, and digital marketing services.",
+        "url": "https://firstflydigital.com/contact.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "FIRST FlY Digital Solution",
+            "url": "https://firstflydigital.com",
+            "email": "hello@firstflydigital.com",
+            "telephone": "+919025676853",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+919025676853",
+                "contactType": "customer service",
+                "availableLanguage": ["English", "Tamil", "Hindi"],
+                "areaServed": "Worldwide"
+            }
+        }
+    }
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://firstflydigital.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://firstflydigital.com/contact.html"}
+        ]
+    }
+    </script>
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
@@ -111,7 +171,7 @@
                         <div>
                             <h4>WhatsApp</h4>
                             <p><a href="https://wa.me/919025676853?text=Hello%20Fly%20Digital%20Solution%2C%20I%20need%20a%20website"
-                                    target="_blank">Chat with us instantly</a></p>
+                                    target="_blank" rel="noopener noreferrer">Chat with us instantly</a></p>
                         </div>
                     </div>
                 </div>

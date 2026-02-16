@@ -1,13 +1,14 @@
 # ============================================
-# FIRST FlYDigital Solution — robots.txt
+# FIRST FlY Digital Solution — robots.txt
 # ============================================
 
 User-agent: *
 Allow: /
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
 
 # Disallow internal asset directories from indexing
-Disallow: /assets/js/
-Disallow: /assets/css/
 Disallow: /assets/fonts/
 Disallow: /assets/3d/
 

@@ -8,6 +8,17 @@
     <meta name="theme-color" content="#7C3AED">
     <meta name="google-site-verification" content="dB2nESj71mLyiPJ5g1iQ_E08Dq26KBDhYDoXe0FTSxI">
 
+    <!-- Performance: Preconnect & DNS Prefetch -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+    <!-- Language & PWA -->
+    <link rel="alternate" hreflang="en" href="https://firstflydigital.com/services.html">
+    <link rel="alternate" hreflang="x-default" href="https://firstflydigital.com/services.html">
+    <link rel="manifest" href="manifest.json">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SDKWKEQKKB"></script>
     <script>
@@ -18,38 +29,80 @@
         gtag('config', 'G-SDKWKEQKKB');
     </script>
     <!-- SEO Meta -->
-    <title>Services | FIRST FlY Digital Solution — Premium Web Development &amp; SEO</title>
+    <title>Services | FIRST FlY Digital Solution — Website Development, SEO, Video Editing & More</title>
     <meta name="description"
-        content="Explore our premium digital services — website development, graphic designing, video editing, shorts &amp; reels, content creation, SEO, social media marketing, SEM, and 3D web experiences.">
+        content="Explore our premium digital services — website development, graphic designing, video editing, shorts & reels editing, content creation, SEO, social media marketing, SEM, and 3D web experiences.">
+    <meta name="keywords"
+        content="website development services, graphic design services, video editing services, SEO services India, social media marketing, search engine marketing, content creation, 3D web design, shorts editing, reels editing, digital marketing services, FIRST FlY Digital">
+    <meta name="author" content="FIRST FlY Digital Solution">
     <link rel="canonical" href="https://firstflydigital.com/services.html">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Services | FIRST FlY Digital Solution">
+    <meta property="og:site_name" content="FIRST FlY Digital Solution">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Services | FIRST FlY Digital Solution — Premium Digital Services">
     <meta property="og:description"
-        content="Premium digital engineering services — static web development, UI/UX design, 3D integration, and SEO.">
+        content="Premium digital engineering services — static web development, graphic design, video editing, SEO, SMM, SEM & 3D integration.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://firstflydigital.com/services.html">
     <meta property="og:image" content="https://firstflydigital.com/assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="FIRST FlY Digital Solution Services">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@firstflydigital">
     <meta name="twitter:title" content="Services | FIRST FlY Digital Solution">
     <meta name="twitter:description"
-        content="Premium digital engineering services — static web development, UI/UX design, 3D integration, and SEO.">
+        content="Premium digital engineering services — web development, graphic design, video editing, SEO & digital marketing.">
+    <meta name="twitter:image" content="https://firstflydigital.com/assets/images/og-image.png">
+    <meta name="twitter:image:alt" content="FIRST FlY Digital Solution Services">
 
-    <!-- Structured Data -->
+    <!-- Structured Data: Service -->
     <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Web Development",
-    "provider": {
-      "@type": "Organization",
-      "name": "FIRST FlYDigital Solution"
-    },
-    "description": "Premium website development, graphic designing, video editing, content creation, SEO, social media marketing, SEM, and 3D web experiences."
-  }
-  </script>
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Digital Marketing & Web Development",
+        "provider": {
+            "@type": "Organization",
+            "name": "FIRST FlY Digital Solution",
+            "url": "https://firstflydigital.com",
+            "telephone": "+919025676853",
+            "email": "hello@firstflydigital.com"
+        },
+        "description": "Premium website development, graphic designing, video editing, content creation, SEO, social media marketing, SEM, and 3D web experiences.",
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Our Services",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Premium Website Development", "description": "High-performance, SEO-optimized websites with futuristic UI"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Graphic Designing", "description": "Logos, banners, social media creatives, and brand identity systems"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Video Editing", "description": "Professional video editing with color grading and motion graphics"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Shorts & Reels Editing", "description": "Short-form video content for Instagram Reels and YouTube Shorts"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Content Creation", "description": "Strategic blogs, social posts, ad copy, and brand storytelling"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Search Engine Optimization", "description": "Technical + on-page SEO for organic traffic growth"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social Media Marketing", "description": "Data-driven social strategies across all platforms"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Search Engine Marketing", "description": "Google Ads and PPC campaigns for maximum ROI"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "3D Web Experience", "description": "Lightweight 3D integration using optimized GLB models"}}
+            ]
+        }
+    }
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://firstflydigital.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://firstflydigital.com/services.html"}
+        ]
+    }
+    </script>
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
