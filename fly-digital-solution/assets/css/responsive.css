@@ -1,0 +1,212 @@
+/* ============================================
+   FIRST FlYDigital Solution — Responsive CSS
+   Breakpoints: 640 | 1024 | 1440
+   ============================================ */
+
+/* ---------- Laptop & Below < 1440px ---------- */
+@media (max-width: 1440px) {
+    :root {
+        --container-width: 1100px;
+    }
+}
+
+/* ---------- Tablet & Below < 1024px ---------- */
+@media (max-width: 1024px) {
+    :root {
+        --section-padding: 70px 0;
+    }
+
+    /* Navbar — show hamburger */
+    .navbar-menu,
+    .navbar-cta {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hero — stack */
+    .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    /* Grids */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-content .about-list {
+        align-items: center;
+    }
+
+    .about-visual {
+        order: -1;
+    }
+
+    .about-visual-box {
+        max-width: 340px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Blog grid — 2 cols */
+    .blog-grid,
+    .blog-grid-full {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Trust strip */
+    .trust-strip-content {
+        gap: 20px;
+    }
+
+    /* Process grid */
+    .services-grid[style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ---------- Mobile & Below < 640px ---------- */
+@media (max-width: 640px) {
+    :root {
+        --section-padding: 50px 0;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    .hero-tags {
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* Grids */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-visual-box {
+        max-width: 280px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* CTA */
+    .cta-box {
+        padding: 40px 24px;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        padding: 32px 16px;
+    }
+
+    .testimonial-card blockquote {
+        font-size: 1rem;
+    }
+
+    /* Section header */
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    /* WhatsApp & Scroll top */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp-float svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .scroll-top {
+        bottom: 20px;
+        right: 78px;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Page hero (inner pages) */
+    .page-hero {
+        padding: 130px 0 50px;
+    }
+
+    /* Blog grid — 1 col */
+    .blog-grid,
+    .blog-grid-full {
+        grid-template-columns: 1fr;
+    }
+
+    /* Trust strip */
+    .trust-strip-content span {
+        font-size: 0.8rem;
+    }
+
+    .trust-strip-logos .trust-logo-item {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    /* Process grid — 1 col on mobile */
+    .services-grid[style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: 1fr !important;
+    }
+}
