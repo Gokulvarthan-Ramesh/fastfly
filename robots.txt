@@ -1,0 +1,18 @@
+# ============================================
+# FIRST FlYDigital Solution — robots.txt
+# ============================================
+
+User-agent: *
+Allow: /
+
+# Disallow internal asset directories from indexing
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /assets/fonts/
+Disallow: /assets/3d/
+
+# Sitemap
+Sitemap: https://firstflydigital.com/sitemap.xml
+
+# Crawl-delay (optional, respected by some bots)
+Crawl-delay: 1
