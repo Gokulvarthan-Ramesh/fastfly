@@ -91,168 +91,369 @@
     </script>
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- Inlined Responsive CSS (eliminates critical request chain) -->
+    <style>
+        @media (max-width: 1440px) {
+            :root {
+                --container-width: 1100px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            :root {
+                --section-padding: 70px 0;
+            }
+
+            .navbar-menu,
+            .navbar-cta {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-content .about-list {
+                align-items: center;
+            }
+
+            .about-visual {
+                order: -1;
+            }
+
+            .about-visual-box {
+                max-width: 340px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .blog-grid,
+            .blog-grid-full {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .trust-strip-content {
+                gap: 20px;
+            }
+
+            .services-grid[style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            :root {
+                --section-padding: 50px 0;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 120px;
+                padding-bottom: 60px;
+            }
+
+            .hero-tags {
+                justify-content: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-visual-box {
+                max-width: 280px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .cta-box {
+                padding: 40px 24px;
+            }
+
+            .testimonial-card {
+                padding: 32px 16px;
+            }
+
+            .testimonial-card blockquote {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                right: 78px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .page-hero {
+                padding: 130px 0 50px;
+            }
+
+            .blog-grid,
+            .blog-grid-full {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-strip-content span {
+                font-size: 0.8rem;
+            }
+
+            .trust-strip-logos .trust-logo-item {
+                font-size: 0.85rem;
+                letter-spacing: 1px;
+            }
+
+            .services-grid[style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="aurora-bg"></div>
-    <div class="floating-shapes"><span></span><span></span><span></span><span></span></div>
+    <a href="#main-content" class="skip-link"
+        style="position:absolute;top:-40px;left:0;background:#7C3AED;color:#fff;padding:8px 16px;z-index:10000;transition:top 0.3s;font-weight:600;"
+        onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+    <div class="aurora-bg" aria-hidden="true"></div>
+    <div class="floating-shapes" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
 
     <!-- NAVBAR (injected by components.js) -->
-    <div id="navbar-placeholder"></div>
+    <div id="navbar-placeholder" role="navigation" aria-label="Main navigation"></div>
 
     <!-- PAGE HERO -->
-    <section class="page-hero">
-        <div class="container">
-            <h1 class="reveal">About <span class="highlight">Us</span></h1>
-            <p class="reveal">Engineering the future of digital experiences — one project at a time.</p>
-        </div>
-    </section>
-
-    <!-- TRUSTED BY STRIP -->
-    <section class="trust-strip trust-strip-logos">
-        <div class="trust-strip-track">
-            <div class="trust-strip-content">
-                <span class="trust-logo-item">TechVentures</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">StartupFlow</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">BrandSpark</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">NovaMedia</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">CloudNine Agency</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">PixelCraft Studios</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">GrowthLab</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">DigitalPulse</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">TechVentures</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">StartupFlow</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">BrandSpark</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">NovaMedia</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">CloudNine Agency</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">PixelCraft Studios</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">GrowthLab</span>
-                <span class="trust-divider">•</span>
-                <span class="trust-logo-item">DigitalPulse</span>
-                <span class="trust-divider">•</span>
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="reveal">About <span class="highlight">Us</span></h1>
+                <p class="reveal">Engineering the future of digital experiences — one project at a time.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ABOUT CONTENT -->
-    <section class="section">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content reveal">
-                    <h2>Why Choose FIRST FlYDigital Solution?</h2>
-                    <p>We don't just build websites. <strong>We engineer digital experiences.</strong></p>
-                    <p>At FIRST FlYDigital Solution, every project is a blend of cutting-edge technology, strategic
-                        thinking, and pixel-perfect execution. We believe that a website should be more than a digital
-                        brochure — it should be a conversion engine.</p>
-                    <p>Our approach blends:</p>
-                    <ul class="about-list">
-                        <li>Design Psychology</li>
-                        <li>Conversion Science</li>
-                        <li>Motion-Driven UI</li>
-                        <li>Performance Optimization</li>
-                    </ul>
+        <!-- TRUSTED BY STRIP -->
+        <section class="trust-strip trust-strip-logos">
+            <div class="trust-strip-track">
+                <div class="trust-strip-content">
+                    <span class="trust-logo-item">TechVentures</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">StartupFlow</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">BrandSpark</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">NovaMedia</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">CloudNine Agency</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">PixelCraft Studios</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">GrowthLab</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">DigitalPulse</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">TechVentures</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">StartupFlow</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">BrandSpark</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">NovaMedia</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">CloudNine Agency</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">PixelCraft Studios</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">GrowthLab</span>
+                    <span class="trust-divider">•</span>
+                    <span class="trust-logo-item">DigitalPulse</span>
+                    <span class="trust-divider">•</span>
                 </div>
-                <div class="about-visual reveal">
-                    <div class="about-visual-box">
-                        <div class="stat-badge">
-                            <div class="stat-num" data-count="50" data-suffix="+">0+</div>
-                            <div class="stat-label">Projects Delivered</div>
+            </div>
+        </section>
+
+        <!-- ABOUT CONTENT -->
+        <section class="section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content reveal">
+                        <h2>Why Choose FIRST FlY Digital Solutions?</h2>
+                        <p>We don't just build websites. <strong>We engineer digital experiences.</strong></p>
+                        <p>At FIRST FlY Digital Solutions, every project is a blend of cutting-edge technology,
+                            strategic
+                            thinking, and pixel-perfect execution. We believe that a website should be more than a
+                            digital
+                            brochure — it should be a conversion engine.</p>
+                        <p>Our approach blends:</p>
+                        <ul class="about-list">
+                            <li>Design Psychology</li>
+                            <li>Conversion Science</li>
+                            <li>Motion-Driven UI</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                    </div>
+                    <div class="about-visual reveal">
+                        <div class="about-visual-box">
+                            <div class="stat-badge">
+                                <div class="stat-num" data-count="50" data-suffix="+">0+</div>
+                                <div class="stat-label">Projects Delivered</div>
+                            </div>
+                            <div class="stat-badge">
+                                <div class="stat-num" data-count="98" data-suffix="%">0%</div>
+                                <div class="stat-label">Client Satisfaction</div>
+                            </div>
+                            <div class="stat-badge">
+                                <div class="stat-num" data-count="3" data-suffix="s">0s</div>
+                                <div class="stat-label">Avg Load Time</div>
+                            </div>
                         </div>
-                        <div class="stat-badge">
-                            <div class="stat-num" data-count="98" data-suffix="%">0%</div>
-                            <div class="stat-label">Client Satisfaction</div>
-                        </div>
-                        <div class="stat-badge">
-                            <div class="stat-num" data-count="3" data-suffix="s">0s</div>
-                            <div class="stat-label">Avg Load Time</div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- OUR VALUES -->
-    <section class="section" style="background: rgba(15,15,27,0.4);">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Our Core Values</h2>
-                <p>The principles that drive every line of code and every pixel we place.</p>
+        <!-- OUR VALUES -->
+        <section class="section" style="background: rgba(15,15,27,0.4);">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Our Core Values</h2>
+                    <p>The principles that drive every line of code and every pixel we place.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="glass-card service-card reveal">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                            </svg>
+                        </div>
+                        <h3>Performance First</h3>
+                        <p>Speed is not optional. Every website we build targets 90+ Lighthouse scores and sub-3-second
+                            load
+                            times.</p>
+                    </div>
+                    <div class="glass-card service-card reveal">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </div>
+                        <h3>Design Excellence</h3>
+                        <p>Modern, minimal, and premium design systems that create visual impact and drive user
+                            engagement.
+                        </p>
+                    </div>
+                    <div class="glass-card service-card reveal">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <h3>Results Driven</h3>
+                        <p>Every design decision is backed by data and optimized for conversions, leads, and brand
+                            authority.</p>
+                    </div>
+                </div>
             </div>
-            <div class="services-grid">
-                <div class="glass-card service-card reveal">
-                    <div class="service-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                        </svg>
-                    </div>
-                    <h3>Performance First</h3>
-                    <p>Speed is not optional. Every website we build targets 90+ Lighthouse scores and sub-3-second load
-                        times.</p>
-                </div>
-                <div class="glass-card service-card reveal">
-                    <div class="service-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                            <circle cx="12" cy="12" r="3" />
-                        </svg>
-                    </div>
-                    <h3>Design Excellence</h3>
-                    <p>Modern, minimal, and premium design systems that create visual impact and drive user engagement.
-                    </p>
-                </div>
-                <div class="glass-card service-card reveal">
-                    <div class="service-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-                            <polyline points="22 4 12 14.01 9 11.01" />
-                        </svg>
-                    </div>
-                    <h3>Results Driven</h3>
-                    <p>Every design decision is backed by data and optimized for conversions, leads, and brand
-                        authority.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-box reveal">
-                <h2>Let's Build Something Extraordinary</h2>
-                <p>Ready to transform your digital presence? Let's talk about your project.</p>
-                <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-box reveal">
+                    <h2>Let's Build Something Extraordinary</h2>
+                    <p>Ready to transform your digital presence? Let's talk about your project.</p>
+                    <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- FOOTER (injected by components.js) -->
-    <div id="footer-placeholder"></div>
+    <div id="footer-placeholder" role="contentinfo"></div>
 
     <!-- FLOATING ELEMENTS (injected by components.js) -->
     <div id="floating-placeholder"></div>
 
-    <script src="assets/js/components.js"></script>
+    <script src="assets/js/components.js" defer></script>
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/animation.js" defer></script>
 

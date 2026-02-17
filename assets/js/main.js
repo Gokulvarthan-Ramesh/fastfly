@@ -1,5 +1,5 @@
 /* ============================================
-   FIRST FlYDigital Solution — Main JavaScript
+   FIRST FlY Digital Solutions — Main JavaScript
    Navbar, Mobile Menu, Scroll-Top, WhatsApp,
    Form Validation, Testimonials, FAQ
    ============================================ */
@@ -47,7 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.classList.toggle('active');
     mobileDrawer.classList.toggle('open');
     drawerOverlay.classList.toggle('active');
-    document.body.style.overflow = mobileDrawer.classList.contains('open') ? 'hidden' : '';
+    const isOpen = mobileDrawer.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    // Update ARIA states
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    if (mobileDrawer) mobileDrawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
   }
 
   if (hamburger) {
@@ -119,12 +124,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const item = q.parentElement;
       const isOpen = item.classList.contains('open');
 
-      // Close all
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      // Close all and reset aria-expanded
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        const btn = i.querySelector('.faq-question');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
 
       // Toggle current
       if (!isOpen) {
         item.classList.add('open');
+        q.setAttribute('aria-expanded', 'true');
       }
     });
   });
@@ -179,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isValid) {
         // Build WhatsApp message
         const waMessage = encodeURIComponent(
-          `Hello FIRST FlYDigital Solution!\n\nName: ${name.value}\nEmail: ${email.value}\nPhone: ${phone.value}\nService: ${service.options[service.selectedIndex].text}\nMessage: ${message.value}`
+          `Hello FIRST FlY Digital Solutions!\n\nName: ${name.value}\nEmail: ${email.value}\nPhone: ${phone.value}\nService: ${service.options[service.selectedIndex].text}\nMessage: ${message.value}`
         );
         window.open(`https://wa.me/919025676853?text=${waMessage}`, '_blank');
 

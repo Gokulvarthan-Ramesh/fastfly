@@ -1,4 +1,4 @@
-# FIRST FlYDigital Solution
+# FIRST FlY Digital Solutions
 
 **Engineering the Future of Digital Experiences**
 
@@ -28,4 +28,4 @@ Simply open `index.html` in any modern browser.
 
 ## License
 
-© 2026 FIRST FlYDigital Solution. All Rights Reserved.
+© 2026 FIRST FlY Digital Solutions. All Rights Reserved.

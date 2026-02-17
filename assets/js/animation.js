@@ -1,5 +1,5 @@
 /* ============================================
-   FIRST FlYDigital Solution — Animation System
+   FIRST FlY Digital Solutions — Animation System
    IntersectionObserver Scroll Reveal
    ============================================ */
 

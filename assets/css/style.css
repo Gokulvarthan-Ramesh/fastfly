@@ -1,5 +1,5 @@
 /* ============================================
-   FIRST FlYDigital Solution — Design System
+   FIRST FlY Digital Solutions — Design System
    Premium Purple Dark Theme
    ============================================ */
 
@@ -21,7 +21,7 @@
     /* Text */
     --text-white: #FFFFFF;
     --text-muted: #B3B3C6;
-    --text-dim: #7a7a99;
+    --text-dim: #9393b0;
 
     /* Gradient */
     --gradient-primary: linear-gradient(135deg, #7C3AED, #A855F7);
@@ -407,6 +407,10 @@ select {
     cursor: pointer;
     z-index: 1001;
     padding: 4px;
+    background: none;
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .hamburger span {
@@ -975,6 +979,13 @@ select {
     justify-content: space-between;
     cursor: pointer;
     font-weight: 600;
+    width: 100%;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: left;
 }
 
 .faq-question .faq-icon {
@@ -1036,9 +1047,11 @@ select {
     flex-shrink: 0;
 }
 
-.contact-info-item h4 {
+.contact-info-item h4,
+.contact-info-item .ci-heading {
     font-size: 1rem;
     margin-bottom: 4px;
+    margin-top: 0;
 }
 
 .contact-info-item p {
