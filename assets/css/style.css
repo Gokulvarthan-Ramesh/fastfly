@@ -4,7 +4,8 @@
    ============================================ */
 
 /* ---------- Google Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+/* ---------- Google Fonts (Moved to HTML for performance) ---------- */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap'); */
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
@@ -1597,4 +1598,28 @@ select {
 .glass-card:hover {
     box-shadow: 0 20px 60px rgba(124, 58, 237, 0.18),
         0 0 40px rgba(124, 58, 237, 0.06);
+}
+
+/* ---------- Performance: Layout Shift Layouts ---------- */
+#navbar-placeholder {
+    min-height: 80px;
+    /* Approximate height of navbar */
+    display: block;
+}
+
+#footer-placeholder {
+    min-height: 400px;
+    /* Approximate height of footer */
+    display: block;
+}
+
+@media (max-width: 768px) {
+    #navbar-placeholder {
+        min-height: 70px;
+    }
+
+    #footer-placeholder {
+        min-height: 600px;
+        /* Footer stacks on mobile */
+    }
 }
