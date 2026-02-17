@@ -52,25 +52,52 @@ document.addEventListener('DOMContentLoaded', () => {
     function animateCounter(el) {
         const target = parseInt(el.getAttribute('data-count'), 10);
         const suffix = el.getAttribute('data-suffix') || '';
-        let current = 0;
-        const increment = Math.ceil(target / 50);
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
+        const duration = 2000; // 2 seconds duration
+        const start = performance.now();
+
+        requestAnimationFrame(function animate(currentTime) {
+            let timeFraction = (currentTime - start) / duration;
+            if (timeFraction > 1) timeFraction = 1;
+
+            const progress = 1 - Math.pow(1 - timeFraction, 3); // Ease out cubic
+            const current = Math.floor(progress * target);
+
             el.textContent = current + suffix;
-        }, 30);
+
+            if (timeFraction < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                el.textContent = target + suffix;
+            }
+        });
     }
 
     // ---------- Parallax subtle effect for hero visual ----------
     const heroVisual = document.querySelector('.hero-visual-placeholder');
-    if (heroVisual && window.innerWidth > 1024) {
+    if (heroVisual && window.matchMedia("(min-width: 1025px)").matches) {
+        let winW = window.innerWidth;
+        let winH = window.innerHeight;
+        let mouseX = 0, mouseY = 0;
+        let ticking = false;
+
+        window.addEventListener('resize', () => {
+            winW = window.innerWidth;
+            winH = window.innerHeight;
+        });
+
         window.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 20;
-            const y = (e.clientY / window.innerHeight - 0.5) * 20;
-            heroVisual.style.transform = `translate(${x}px, ${y}px)`;
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const x = (mouseX / winW - 0.5) * 20;
+                    const y = (mouseY / winH - 0.5) * 20;
+                    heroVisual.style.transform = `translate(${x}px, ${y}px)`;
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
     }
 
