@@ -22,6 +22,11 @@
     <link rel="manifest" href="manifest.json">
 
     <!-- Optimized Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap">
+    <link rel="preload" as="style" href="assets/css/style.min.css">
+    
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
@@ -74,59 +79,108 @@
     <meta name="twitter:image" content="https://firstflydigital.com/assets/images/og-image.png">
     <meta name="twitter:image:alt" content="FIRST FlY Digital Solution">
 
-    <!-- Structured Data: Organization -->
+    <!-- Structured Data: Organization & LocalBusiness -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "LocalBusiness",
         "name": "FIRST FlY Digital Solution",
         "alternateName": "FIRST FlY Digital Solutions",
         "url": "https://firstflydigital.com",
         "logo": "https://firstflydigital.com/assets/images/og-image.png",
+        "image": "https://firstflydigital.com/assets/images/og-image.png",
         "description": "Premium digital engineering studio building fast, futuristic, and SEO-optimized static websites with graphic design, video editing, and digital marketing services.",
         "email": "hello@firstflydigital.com",
         "telephone": "+919025676853",
-        "foundingDate": "2024",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Remote-First Agency",
+            "addressLocality": "Worldwide",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 11.1271,
+            "longitude": 78.6569
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+        },
         "sameAs": [
             "https://facebook.com/firstflydigital",
             "https://twitter.com/firstflydigital",
             "https://youtube.com/@firstflydigital",
             "https://instagram.com/firstflydigital"
-        ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+919025676853",
-            "contactType": "customer service",
-            "availableLanguage": ["English", "Tamil", "Hindi"],
-            "areaServed": "Worldwide"
-        },
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Digital Services",
-            "itemListElement": [
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Premium Website Development"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Graphic Designing"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Video Editing"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Search Engine Optimization"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social Media Marketing"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Search Engine Marketing"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Content Creation"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "3D Web Experience"}}
-            ]
-        }
+        ]
     }
     </script>
 
-    <!-- Structured Data: WebSite with SearchAction -->
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "What is a static website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A fast-loading website built without server-side processing, ideal for performance and SEO. Static sites are pre-rendered and served directly to the browser, resulting in lightning-fast load times."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Can static websites rank on Google?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. With optimized structure, schema markup, and performance optimization, static websites can achieve excellent search rankings. Google prioritizes fast-loading, well-structured websites."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Do you integrate 3D models?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Lightweight optimized 3D web integration is available using GLB format models under 3MB. We ensure 3D elements lazy-load and gracefully fall back on mobile devices."
+            }
+        }, {
+            "@type": "Question",
+            "name": "What digital marketing services do you offer?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We offer a comprehensive suite of digital services including SEO, SEM (Google Ads), Social Media Marketing, Content Creation, and Video Editing."
+            }
+        }, {
+            "@type": "Question",
+            "name": "How long does it take to build a custom website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Typically, a premium custom static website takes 1-3 weeks depending on complexity, features, and assets provided."
+            }
+        }]
+    }
+    </script>
+
+    <!-- Structured Data: WebSite -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "FIRST FlY Digital Solution",
         "url": "https://firstflydigital.com",
-        "publisher": {
-            "@type": "Organization",
-            "name": "FIRST FlY Digital Solution"
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://firstflydigital.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
         }
     }
     </script>
@@ -136,7 +190,7 @@
     <link rel="preload" href="assets/js/main.js" as="script">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
 
     <!-- Inlined Responsive CSS (eliminates critical request chain) -->
     <style>
@@ -679,9 +733,9 @@
                     <!-- Blog Card 1 -->
                     <div class="blog-card glass-card reveal">
                         <div class="blog-card-img">
-                            <img src="assets/images/seo.jpg" alt="SEO Mistakes"
-                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                            <span class="blog-card-tag" style="position: relative; z-index: 2;">SEO</span>
+                            <img src="assets/images/seo.jpg" alt="SEO Mistakes" loading="lazy" width="600" height="338"
+                                style="width:100%; height:100%; object-fit:cover;">
+                            <span class="blog-card-tag">SEO</span>
                         </div>
                         <div class="blog-card-body">
                             <h3><a href="blog.html">10 SEO Mistakes That Are Killing Your Rankings in 2026</a></h3>
@@ -697,9 +751,9 @@
                     <!-- Blog Card 2 -->
                     <div class="blog-card glass-card reveal">
                         <div class="blog-card-img">
-                            <img src="assets/images/video.jpg" alt="Video Marketing"
-                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                            <span class="blog-card-tag" style="position: relative; z-index: 2;">Video</span>
+                            <img src="assets/images/video.jpg" alt="Video Marketing" loading="lazy" width="600" height="338"
+                                style="width:100%; height:100%; object-fit:cover;">
+                            <span class="blog-card-tag">Marketing</span>
                         </div>
                         <div class="blog-card-body">
                             <h3><a href="blog.html">Why Video Marketing is the #1 Growth Strategy for 2026</a></h3>
@@ -715,9 +769,9 @@
                     <!-- Blog Card 3 -->
                     <div class="blog-card glass-card reveal">
                         <div class="blog-card-img">
-                            <img src="assets/images/social.jpg" alt="Social Media Strategy"
-                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                            <span class="blog-card-tag" style="position: relative; z-index: 2;">Social Media</span>
+                            <img src="assets/images/social.jpg" alt="Social Media Strategy" loading="lazy" width="600" height="338"
+                                style="width:100%; height:100%; object-fit:cover;">
+                            <span class="blog-card-tag">Social</span>
                         </div>
                         <div class="blog-card-body">
                             <h3><a href="blog.html">The Ultimate Social Media Strategy Guide for Small Businesses</a>
@@ -972,9 +1026,9 @@
     <div id="floating-placeholder"></div>
 
     <!-- Scripts -->
-    <script src="assets/js/components.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/animation.js" defer></script>
+    <script src="assets/js/components.min.js" defer></script>
+    <script src="assets/js/main.min.js" defer></script>
+    <script src="assets/js/animation.min.js" defer></script>
 
 </body>
 

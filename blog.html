@@ -16,12 +16,21 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
+    <!-- Performance: Preload Critical Assets -->
+    <link rel="preload" as="style" href="assets/css/style.min.css">
+    <link rel="preload" as="script" href="assets/js/components.min.js">
+
     <!-- Language & PWA -->
     <link rel="alternate" hreflang="en" href="https://firstflydigital.com/blog.html">
     <link rel="alternate" hreflang="x-default" href="https://firstflydigital.com/blog.html">
     <link rel="manifest" href="manifest.json">
 
     <!-- Optimized Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap">
+    <link rel="preload" as="style" href="assets/css/style.css">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
@@ -43,9 +52,9 @@
     </script>
 
     <!-- SEO Meta -->
-    <title>Blog | FIRST FlY Digital Solution — SEO Tips, Digital Marketing Insights & Growth Strategies</title>
+    <title>Blog | FIRST FlY Digital Solution — Digital Marketing Insights & Growth Strategies</title>
     <meta name="description"
-        content="Expert insights on SEO, video marketing, social media strategy, web performance, content creation, and SEM from FIRST FlY Digital Solution. Read our latest articles.">
+        content="Expert insights on SEO, video marketing, social media strategy, and web performance. Stay ahead with our data-driven digital marketing guides and growth strategies.">
     <meta name="keywords"
         content="SEO tips, digital marketing blog, video marketing strategy, social media guide, web performance optimization, content creation tips, Google Ads vs SEO, digital marketing insights, FIRST FlY Digital blog">
     <meta name="author" content="FIRST FlY Digital Solution">
@@ -145,7 +154,7 @@
     }
     </script>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
 
     <style>
         @media (max-width: 1440px) {
@@ -367,8 +376,8 @@
                     <!-- Blog Card 1 -->
                     <article class="blog-card glass-card reveal">
                         <div class="blog-card-img">
-                            <img src="assets/images/seo.jpg" alt="SEO Mistakes"
-                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                            <img src="assets/images/seo.jpg" alt="SEO Mistakes" loading="lazy" width="600" height="338"
+                                style="width:100%; height:100%; object-fit:cover;">
                             <span class="blog-card-tag" style="position: relative; z-index: 2;">SEO</span>
                         </div>
                         <div class="blog-card-body">
@@ -388,8 +397,8 @@
                     <!-- Blog Card 2 -->
                     <article class="blog-card glass-card reveal">
                         <div class="blog-card-img">
-                            <img src="assets/images/video.jpg" alt="Video Marketing"
-                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                            <img src="assets/images/video.jpg" alt="Video Marketing" loading="lazy" width="600" height="338"
+                                style="width:100%; height:100%; object-fit:cover;">
                             <span class="blog-card-tag" style="position: relative; z-index: 2;">Video Marketing</span>
                         </div>
                         <div class="blog-card-body">
@@ -407,8 +416,8 @@
                     <!-- Blog Card 3 -->
                     <article class="blog-card glass-card reveal">
                         <div class="blog-card-img">
-                            <img src="assets/images/social.jpg" alt="Social Media Strategy"
-                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                            <img src="assets/images/social.jpg" alt="Social Media Strategy" loading="lazy" width="600" height="338"
+                                style="width:100%; height:100%; object-fit:cover;">
                             <span class="blog-card-tag" style="position: relative; z-index: 2;">Social Media</span>
                         </div>
                         <div class="blog-card-body">
@@ -425,8 +434,8 @@
                     <!-- Blog Card 4 -->
                     <article class="blog-card glass-card reveal">
                         <div class="blog-card-img">
-                            <img src="assets/images/performance.jpg" alt="Web Performance"
-                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                            <img src="assets/images/performance.jpg" alt="Web Performance" loading="lazy" width="600" height="338"
+                                style="width:100%; height:100%; object-fit:cover;">
                             <span class="blog-card-tag" style="position: relative; z-index: 2;">Web Performance</span>
                         </div>
                         <div class="blog-card-body">
@@ -444,8 +453,8 @@
                     <!-- Blog Card 5 -->
                     <article class="blog-card glass-card reveal">
                         <div class="blog-card-img">
-                            <img src="assets/images/solution.jpg" alt="Content Creation"
-                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                            <img src="assets/images/solution.jpg" alt="Content Creation" loading="lazy" width="600" height="338"
+                                style="width:100%; height:100%; object-fit:cover;">
                             <span class="blog-card-tag" style="position: relative; z-index: 2;">Content Creation</span>
                         </div>
                         <div class="blog-card-body">
@@ -463,8 +472,8 @@
                     <!-- Blog Card 6 -->
                     <article class="blog-card glass-card reveal">
                         <div class="blog-card-img">
-                            <img src="assets/images/googleseo.jpg" alt="SEM"
-                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                            <img src="assets/images/googleseo.jpg" alt="SEM" loading="lazy" width="600" height="338"
+                                style="width:100%; height:100%; object-fit:cover;">
                             <span class="blog-card-tag" style="position: relative; z-index: 2;">SEM</span>
                         </div>
                         <div class="blog-card-body">
@@ -499,9 +508,9 @@
     <!-- FLOATING ELEMENTS (injected by components.js) -->
     <div id="floating-placeholder"></div>
 
-    <script src="assets/js/components.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/animation.js" defer></script>
+    <script src="assets/js/components.min.js" defer></script>
+    <script src="assets/js/main.min.js" defer></script>
+    <script src="assets/js/animation.min.js" defer></script>
 
 </body>
 
