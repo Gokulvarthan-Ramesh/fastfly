@@ -1,5 +1,5 @@
 /* ============================================
-   FIRST FlY Digital Solutions — Shared Components
+   First Fly Digital solutions — Shared Components
    Navbar, Footer, WhatsApp Float, Scroll-to-Top
    Single source of truth for all pages.
    ============================================ */
@@ -8,102 +8,137 @@
     // Detect current page for active nav link
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-    // ---------- NAVBAR ----------
-    const navbarHTML = `
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <a href="index.html" class="navbar-logo">
-    F <span class="fly">F</span> D<span class="fly"> S</span>
-</a>
+    // Inject Custom Styles to prevent caching issues
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .main-header { position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; z-index: 9999 !important; }
+        .nav-actions a[href="contact.html"] { 
+            background-color: var(--primary) !important; 
+            color: white !important; 
+            padding: 12px 28px !important;
+            border-radius: var(--radius-md) !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            font-size: 0.85rem !important;
+            display: inline-block !important;
+            transition: 0.3s !important;
+            box-shadow: 0 4px 15px rgba(255, 93, 57, 0.2);
+        }
+        .nav-actions a[href="contact.html"]:hover { 
+            background-color: var(--primary-dark) !important; 
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 20px rgba(255, 93, 57, 0.3) !important;
+        }
+    `;
+    document.head.appendChild(style);
 
-            <div class="navbar-menu" id="navMenu">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
+    // ---------- HEADER (Top Bar + Navbar) ----------
+    const headerHTML = `
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="top-bar-info" style="display: flex; gap: 25px;">
+                    <span style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600;">
+                        <i class="fas fa-envelope" style="color: var(--primary);"></i> firstflydigitalsolutions@gmail.com
+                    </span>
+                    <span style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600;">
+                        <i class="fas fa-phone" style="color: var(--primary);"></i> +91 90256 76853
+                    </span>
+                </div>
+                <div class="top-bar-socials" style="display: flex; gap: 20px;">
+                    <a href="https://www.facebook.com/share/19GpqoZY9P/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/firstflydigitalsolutions/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@firstflydigitalsolutions"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
-            <a href="contact.html" class="btn btn-primary navbar-cta">Start Project</a>
-            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
-                <span></span><span></span><span></span>
-            </button>
         </div>
-    </nav>
-
-    <!-- Mobile Drawer -->
-    <div class="drawer-overlay" id="drawerOverlay"></div>
-    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html" class="btn btn-primary" style="margin-top:16px; text-align:center;">Start Project</a>
-    </div>
-  `;
+        <nav class="navbar-new">
+            <div class="container">
+                <a href="index.html" class="logo-elite">
+                    <img src="assets/images/Logo1.png" alt="First Fly Digital" style="height: 70px; transition: 0.3s;">
+                </a>
+                <div class="nav-links-elite">
+                    <a href="index.html" class="${currentPage === 'index.html' || currentPage === '' ? 'active-elite' : ''}">Home</a>
+                    <a href="index.html#services">Service</a>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <a href="index.html#testimonials">Testimonials</a>
+                    <a href="faq.html" class="${currentPage === 'faq.html' ? 'active-elite' : ''}">FAQ</a>
+                    <a href="blog.html" class="${currentPage === 'blog.html' ? 'active-elite' : ''}">Blog</a>
+                    <a href="about.html" class="${currentPage === 'about.html' ? 'active-elite' : ''}">About</a>
+                </div>
+                <div class="nav-actions-elite">
+                    <a href="contact.html" class="btn btn-primary nav-cta">CONTACT</a>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    `;
 
     // ---------- FOOTER ----------
     const footerHTML = `
-    <footer class="footer">
+    <footer class="footer-elite">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        FIRST <span class="fly">FlY</span>Digital
-                    </div>
-                    <p>FIRST FlY Digital Solutions is a premium digital engineering studio building fast, futuristic, and
-                        SEO-optimized static websites.</p>
-                    <div class="footer-social">
-                        <a href="https://facebook.com/firstflydigital" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg
-                                viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                            </svg></a>
-                        <a href="https://twitter.com/firstflydigital" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><svg
-                                viewBox="0 0 24 24" aria-hidden="true">
-                                <path
-                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                            </svg></a>
-                        <a href="https://www.youtube.com/@FIRSTFLYDIGITALSOLUTIONS" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg
-                                viewBox="0 0 24 24" aria-hidden="true">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </svg></a>
-                        <a href="https://instagram.com/firstflydigital" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg
-                                viewBox="0 0 24 24" aria-hidden="true">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                            </svg></a>
+            <div class="footer-top-section">
+                <div class="footer-brand-column">
+                    <div class="footer-logo-elite"><img src="assets/images/Logo1.png" alt="First Fly Digital" style="height: 70px;"></div>
+                    <p class="footer-mission">Architecting the future of digital engineering. From custom ERP systems to cinematic storytelling, we build the engines of modern business.</p>
+                    <div class="footer-social-grid">
+                        <a href="https://www.facebook.com/share/19GpqoZY9P/" class="social-glass"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/firstflydigitalsolutions/" class="social-glass"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@firstflydigitalsolutions" class="social-glass"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="portfolio.html">Portfolio</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <a href="services.html">Website Development</a>
-                    <a href="services.html">Graphic Designing</a>
-                    <a href="services.html">Video Editing</a>
-                    <a href="services.html">SEO &amp; SEM</a>
-                    <a href="services.html">Social Media Marketing</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <a href="mailto:hello@firstflydigital.com">hello@firstflydigital.com</a>
-                    <a href="tel:+919025676853">+91 9025676853</a>
-                    <a href="https://wa.me/919025676853" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                
+                <div class="footer-links-grid">
+                    <div class="footer-col">
+                        <h4>Engineering</h4>
+                        <ul>
+                            <li><a href="index.html#services">Software & ERP</a></li>
+                            <li><a href="index.html#services">Web Engineering</a></li>
+                            <li><a href="index.html#services">Creative Studio</a></li>
+                            <li><a href="index.html#services">Marketplace</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Studio</h4>
+                        <ul>
+                            <li><a href="about.html">Our Story</a></li>
+                            <li><a href="portfolio.html">Selected Work</a></li>
+                            <li><a href="blog.html">Journal</a></li>
+                            <li><a href="faq.html">Common Questions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <div class="footer-contact-glass">
+                            <p><i class="fas fa-envelope"></i> firstflydigitalsolutions@gmail.com</p>
+                            <p><i class="fas fa-phone-alt"></i> +91 90256 76853</p>
+                            <a href="contact.html" class="footer-cta-btn">Book A Consultation</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                &copy; 2026 FIRST FlY Digital Solutions. All Rights Reserved.
+            
+            <div class="footer-bottom-elite">
+                <div class="copyright-wrap">
+                    <p>&copy; 2026 First Fly Digital. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms</a>
+                    </div>
+                </div>
+                <div class="scroll-top-label" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    BACK TO TOP <i class="fas fa-arrow-up"></i>
+                </div>
             </div>
         </div>
+        <div class="footer-bg-text">FIRST FLY</div>
     </footer>
   `;
 
@@ -124,6 +159,33 @@
             <path d="M12 4l-8 8h5v8h6v-8h5z" />
         </svg>
     </button>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <div class="footer-logo-elite"><img src="assets/images/Logo1.png" alt="First Fly Digital" style="height: 50px;"></div>
+            <button id="closeDrawer" class="drawer-close"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#services">Service</a>
+            <a href="index.html#portfolio">Portfolio</a>
+            <a href="index.html#testimonials">Testimonials</a>
+            <a href="faq.html">FAQ</a>
+            <a href="blog.html">Blog</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="btn btn-primary drawer-cta">Contact Us</a>
+        </nav>
+        <div class="drawer-footer">
+            <p>Connect with us</p>
+            <div class="footer-social-grid">
+                <a href="https://www.facebook.com/share/19GpqoZY9P/" class="social-glass"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/firstflydigitalsolutions/" class="social-glass"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@firstflydigitalsolutions" class="social-glass"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
   `;
 
     // ---------- INJECT COMPONENTS ----------
@@ -131,15 +193,58 @@
     const footerPlaceholder = document.getElementById('footer-placeholder');
     const floatingPlaceholder = document.getElementById('floating-placeholder');
 
-    if (navPlaceholder) navPlaceholder.innerHTML = navbarHTML;
+    // Global Elegant Elements
+    const preloaderHTML = `
+        <div class="preloader">
+            <div class="preloader-content">
+                <div class="logo" style="margin-bottom: 20px;"><img src="assets/images/Logo1.png" alt="First Fly Digital" style="height: 80px;"></div>
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    `;
+    const cursorHTML = `<div class="custom-cursor"></div>`;
+    const grainyHTML = `<div class="grainy-overlay"></div>`;
+
+    document.body.insertAdjacentHTML('afterbegin', preloaderHTML + grainyHTML + cursorHTML);
+
+    if (navPlaceholder) navPlaceholder.innerHTML = headerHTML;
     if (footerPlaceholder) footerPlaceholder.innerHTML = footerHTML;
     if (floatingPlaceholder) floatingPlaceholder.innerHTML = floatingHTML;
 
     // ---------- SET ACTIVE NAV LINK ----------
-    document.querySelectorAll('.navbar-menu a, .mobile-drawer a:not(.btn)').forEach(link => {
+    document.querySelectorAll('.nav-links a').forEach(link => {
         const href = link.getAttribute('href');
         if (href === currentPage) {
             link.classList.add('active');
         }
     });
 })();
+
+    // ---------- MOBILE MENU LOGIC ----------
+    setTimeout(() => {
+        const hamburger = document.getElementById('hamburger');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+        const closeDrawer = document.getElementById('closeDrawer');
+
+        if (hamburger && mobileDrawer && drawerOverlay) {
+            hamburger.addEventListener('click', () => {
+                mobileDrawer.classList.add('active');
+                drawerOverlay.classList.add('active');
+            });
+
+            const closeMenu = () => {
+                mobileDrawer.classList.remove('active');
+                drawerOverlay.classList.remove('active');
+            };
+
+            drawerOverlay.addEventListener('click', closeMenu);
+            if (closeDrawer) closeDrawer.addEventListener('click', closeMenu);
+            
+            // Close on link click
+            mobileDrawer.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        }
+    }, 100);
+

@@ -5,27 +5,100 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ---------- Scroll Reveal (IntersectionObserver) ----------
-    const revealElements = document.querySelectorAll('.reveal');
+    // ---------- Preloader ----------
+    const hidePreloader = () => {
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                document.body.style.overflow = '';
+                document.body.style.overflowX = 'hidden'; // Ensure no horizontal scroll
+            }, 800);
+        }
+    };
 
-    if ('IntersectionObserver' in window) {
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.12,
-            rootMargin: '0px 0px -40px 0px'
+    if (document.readyState === 'complete') {
+        hidePreloader();
+    } else {
+        window.addEventListener('load', hidePreloader);
+    }
+
+    // Fallback: Force hide preloader after 4 seconds
+    setTimeout(hidePreloader, 4000);
+
+    // Prevent scroll during preloader
+    document.body.style.overflow = 'hidden';
+
+    // ---------- Custom Cursor ----------
+    const cursor = document.querySelector('.custom-cursor');
+
+    if (cursor) {
+        cursor.style.opacity = '0'; // Hide initially
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.opacity = '1';
+            cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
         });
 
-        revealElements.forEach(el => revealObserver.observe(el));
-    } else {
-        // Fallback: show everything
-        revealElements.forEach(el => el.classList.add('active'));
+        document.querySelectorAll('a, button, .btn, .service-card-new, .portfolio-card-new').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
     }
+
+    // ---------- Magnetic Elements ----------
+    const magneticElements = document.querySelectorAll('.btn-primary, .btn-outline, .watch-video-btn');
+    magneticElements.forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = '';
+        });
+    });
+
+    // ---------- Scroll Progress Bar ----------
+    const progressBar = document.createElement('div');
+    progressBar.style.cssText = `
+        position: fixed; top: 0; left: 0; height: 3px; background: var(--primary);
+        z-index: 10001; transition: width 0.1s; width: 0;
+    `;
+    document.body.appendChild(progressBar);
+
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + "%";
+    });
+
+    // ---------- Scroll Reveal (IntersectionObserver) ----------
+    const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Handle Staggering for Grids
+                if (entry.target.parentElement.classList.contains('services-bento') || 
+                    entry.target.parentElement.classList.contains('portfolio-grid-new')) {
+                    const index = Array.from(entry.target.parentElement.children).indexOf(entry.target);
+                    entry.target.style.transitionDelay = `${index * 0.12}s`;
+                }
+                
+                entry.target.classList.add('active');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+
+    const revealElements = document.querySelectorAll('[class*="reveal"]');
+    revealElements.forEach(el => revealObserver.observe(el));
 
     // ---------- Staggered Reveal for Hero ----------
     const heroStagger = document.querySelectorAll('.hero-stagger');

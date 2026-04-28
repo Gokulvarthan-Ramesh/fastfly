@@ -7,17 +7,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- Navbar Scroll Effect ----------
-  const navbar = document.querySelector('.navbar');
+  const mainHeader = document.querySelector('.main-header');
   const scrollTopBtn = document.querySelector('.scroll-top');
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
-    // Navbar background
+    // Header scroll state
     if (scrollY > 60) {
-      navbar.classList.add('scrolled');
+      mainHeader?.classList.add('scrolled');
     } else {
-      navbar.classList.remove('scrolled');
+      mainHeader?.classList.remove('scrolled');
     }
 
     // Scroll-to-top visibility
@@ -37,27 +37,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ---------- Smooth Scrolling for Anchor Links ----------
+  document.querySelectorAll('a[href^="#"], a[href*="index.html#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      const targetId = href.includes('#') ? href.split('#')[1] : null;
+      const targetElement = targetId ? document.getElementById(targetId) : null;
+
+      if (targetElement) {
+        e.preventDefault();
+        const headerOffset = 100;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+
   // ---------- Mobile Hamburger Menu ----------
-  const hamburger = document.querySelector('.hamburger');
+  const hamburger = document.getElementById('hamburger');
   const mobileDrawer = document.querySelector('.mobile-drawer');
   const drawerOverlay = document.querySelector('.drawer-overlay');
+  const closeDrawer = document.getElementById('closeDrawer');
   const drawerLinks = document.querySelectorAll('.mobile-drawer a');
 
   function toggleDrawer() {
+    if (!hamburger || !mobileDrawer) return;
+    
     hamburger.classList.toggle('active');
     mobileDrawer.classList.toggle('open');
     drawerOverlay.classList.toggle('active');
+    
     const isOpen = mobileDrawer.classList.contains('open');
     document.body.style.overflow = isOpen ? 'hidden' : '';
-    // Update ARIA states
-    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    if (mobileDrawer) mobileDrawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
   }
 
-  if (hamburger) {
-    hamburger.addEventListener('click', toggleDrawer);
-  }
+  if (hamburger) hamburger.addEventListener('click', toggleDrawer);
+  if (drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+  if (closeDrawer) closeDrawer.addEventListener('click', toggleDrawer);
   if (drawerOverlay) {
     drawerOverlay.addEventListener('click', toggleDrawer);
   }
@@ -118,28 +139,29 @@ document.addEventListener('DOMContentLoaded', () => {
     slideInterval = setInterval(nextSlide, 5000);
   }
 
-  // ---------- FAQ Accordion ----------
-  document.querySelectorAll('.faq-question').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isOpen = item.classList.contains('open');
-
-      // Close all and reset aria-expanded
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.classList.remove('open');
-        const btn = i.querySelector('.faq-question');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
+  // ---------- FAQ Accordion V3 ----------
+  const faqItems = document.querySelectorAll('.faq-item-v3');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question-v3');
+    if (question) {
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all other items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+          }
+        });
+        
+        // Toggle current item
+        item.classList.toggle('active');
       });
-
-      // Toggle current
-      if (!isOpen) {
-        item.classList.add('open');
-        q.setAttribute('aria-expanded', 'true');
-      }
-    });
+    }
   });
 
-  // ---------- Contact Form Validation ----------
+  // ---------- Contact Form Validation & Submission ----------
   const contactForm = document.getElementById('contactForm');
 
   if (contactForm) {
@@ -150,51 +172,62 @@ document.addEventListener('DOMContentLoaded', () => {
       // Clear previous errors
       contactForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('error'));
 
-      // Name
       const name = contactForm.querySelector('[name="name"]');
-      if (name && name.value.trim() === '') {
-        name.closest('.form-group').classList.add('error');
-        isValid = false;
-      }
-
-      // Email
       const email = contactForm.querySelector('[name="email"]');
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (email && !emailRegex.test(email.value.trim())) {
-        email.closest('.form-group').classList.add('error');
-        isValid = false;
-      }
-
-      // Phone
-      const phone = contactForm.querySelector('[name="phone"]');
-      if (phone && phone.value.trim() === '') {
-        phone.closest('.form-group').classList.add('error');
-        isValid = false;
-      }
-
-      // Service
-      const service = contactForm.querySelector('[name="service"]');
-      if (service && service.value === '') {
-        service.closest('.form-group').classList.add('error');
-        isValid = false;
-      }
-
-      // Message
+      const subject = contactForm.querySelector('[name="subject"]');
       const message = contactForm.querySelector('[name="message"]');
-      if (message && message.value.trim() === '') {
-        message.closest('.form-group').classList.add('error');
+
+      // Validation
+      if (!name || name.value.trim() === '') {
+        name?.parentElement.classList.add('error');
+        isValid = false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email.value.trim())) {
+        email?.parentElement.classList.add('error');
+        isValid = false;
+      }
+
+      if (!message || message.value.trim() === '') {
+        message?.parentElement.classList.add('error');
         isValid = false;
       }
 
       if (isValid) {
-        // Build WhatsApp message
+        // Logic: Redirect to WhatsApp with message
         const waMessage = encodeURIComponent(
-          `Hello FIRST FlY Digital Solutions!\n\nName: ${name.value}\nEmail: ${email.value}\nPhone: ${phone.value}\nService: ${service.options[service.selectedIndex].text}\nMessage: ${message.value}`
+          `Hello First Fly Digital!\n\n` +
+          `Name: ${name.value}\n` +
+          `Email: ${email.value}\n` +
+          `Subject: ${subject ? subject.value : 'General Inquiry'}\n` +
+          `Message: ${message.value}`
         );
+        
         window.open(`https://wa.me/919025676853?text=${waMessage}`, '_blank');
 
-        // Reset form
+        // Optional: Also submit via Formspree if a real ID is provided later
+        // contactForm.submit(); 
+
         contactForm.reset();
+        
+        // Show Success Bar
+        const successBar = document.createElement('div');
+        successBar.className = 'form-success-bar';
+        successBar.innerHTML = `
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <span>Success! Redirecting to WhatsApp...</span>
+            </div>
+            <div class="success-progress"></div>
+        `;
+        document.body.appendChild(successBar);
+        
+        setTimeout(() => successBar.classList.add('show'), 10);
+        setTimeout(() => {
+            successBar.classList.remove('show');
+            setTimeout(() => successBar.remove(), 500);
+        }, 4000);
       }
     });
   }
