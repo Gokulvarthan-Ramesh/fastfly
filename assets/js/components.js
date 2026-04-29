@@ -57,10 +57,7 @@
         <nav class="navbar-new">
             <div class="container">
                 <a href="index.html" class="logo-elite">
-                    <picture>
-                        <source srcset="assets/images/Logo1.webp" type="image/webp">
-                        <img src="assets/images/Logo1.png" alt="First Fly Digital" width="80" height="70" style="height: 70px; width: auto; transition: 0.3s;">
-                    </picture>
+                    <img src="assets/images/Logo1.png" alt="First Fly Digital" width="80" height="70" style="height: 70px; width: auto; transition: 0.3s;">
                 </a>
                 <div class="nav-links-elite">
                     <a href="index.html" class="${currentPage === 'index.html' || currentPage === '' ? 'active-elite' : ''}">Home</a>
@@ -251,4 +248,5 @@
             });
         }
     }, 100);
+
 
