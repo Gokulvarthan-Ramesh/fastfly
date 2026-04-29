@@ -3601,6 +3601,8 @@ select {
     font-weight: 900 !important;
     letter-spacing: 1px !important;
     text-align: center !important;
+    background-color: var(--secondary) !important;
+    color: white !important;
 }
 
 .drawer-footer {
