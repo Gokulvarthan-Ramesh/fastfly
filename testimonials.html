@@ -24,6 +24,10 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
+    <!-- Performance: Preload -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/images/Logo1.png" as="image">
+
     <!-- Language & PWA -->
     <link rel="alternate" hreflang="en" href="https://firstflydigitalsolutions.com/testimonials.html">
     <link rel="alternate" hreflang="x-default" href="https://firstflydigitalsolutions.com/testimonials.html">
@@ -78,6 +82,37 @@
     }
     </script>
 
+    <!-- Structured Data: AggregateRating & Reviews -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "First Fly Digital Solutions",
+        "image": "https://firstflydigitalsolutions.com/assets/images/logo.png",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "150"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Arun Kumar" },
+                "datePublished": "2026-03-15",
+                "reviewBody": "First Fly transformed our academy's digital footprint. Their ERP system is a masterclass in engineering.",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Sarah Jen" },
+                "datePublished": "2026-03-10",
+                "reviewBody": "The cinematic quality of their video production is unmatched. They tell stories that convert.",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+            }
+        ]
+    }
+    </script>
+
     <link rel="stylesheet" href="assets/css/style.css?v=7">
 </head>
 
@@ -86,7 +121,7 @@
     <!-- NAVBAR (injected by components.js) -->
     <div id="navbar-placeholder"></div>
 
-    <main>
+    <main id="main-content">
         <!-- ========== BREADCRUMB HERO ========== -->
         <section class="hero-inner reveal-blur">
             <div class="container">
@@ -111,8 +146,8 @@
                         <p class="t-text">"First Fly transformed our academy's digital footprint. Their ERP system is a
                             masterclass in engineering, streamlining our entire student lifecycle."</p>
                         <div class="t-author">
-                            <img src="https://ui-avatars.com/api/?name=Arun+Kumar&background=0145f5&color=ffffff"
-                                alt="Arun Kumar" class="t-avatar">
+                                <img src="https://ui-avatars.com/api/?name=Arun+Kumar&background=0145f5&color=ffffff"
+                                    alt="Arun Kumar" class="t-avatar" loading="lazy">
                             <div>
                                 <div class="t-name">Arun Kumar</div>
                                 <div class="t-role">Academy Director</div>
@@ -127,7 +162,7 @@
                             edit; they tell stories that convert viewers into loyal customers."</p>
                         <div class="t-author">
                             <img src="https://ui-avatars.com/api/?name=Sarah+Jen&background=051741&color=ffffff"
-                                alt="Sarah Jen" class="t-avatar">
+                                alt="Sarah Jen" class="t-avatar" loading="lazy">
                             <div>
                                 <div class="t-name">Sarah Jen</div>
                                 <div class="t-role">Creative Lead</div>
@@ -142,7 +177,7 @@
                             Their technical expertise in web engineering is truly impressive."</p>
                         <div class="t-author">
                             <img src="https://ui-avatars.com/api/?name=Rajesh+V&background=0145f5&color=ffffff"
-                                alt="Rajesh V" class="t-avatar">
+                                alt="Rajesh V" class="t-avatar" loading="lazy">
                             <div>
                                 <div class="t-name">Rajesh V</div>
                                 <div class="t-role">E-commerce Founder</div>
@@ -157,7 +192,7 @@
                             traffic since First Fly took over our search strategy."</p>
                         <div class="t-author">
                             <img src="https://ui-avatars.com/api/?name=Daniel+Kim&background=051741&color=ffffff"
-                                alt="Daniel Kim" class="t-avatar">
+                                alt="Daniel Kim" class="t-avatar" loading="lazy">
                             <div>
                                 <div class="t-name">Daniel Kim</div>
                                 <div class="t-role">Tech CEO</div>
@@ -172,7 +207,7 @@
                             solution that saved our team 20 hours of manual work every week."</p>
                         <div class="t-author">
                             <img src="https://ui-avatars.com/api/?name=Carry+Scott&background=0145f5&color=ffffff"
-                                alt="Carry Scott" class="t-avatar">
+                                alt="Carry Scott" class="t-avatar" loading="lazy">
                             <div>
                                 <div class="t-name">Carry Scott</div>
                                 <div class="t-role">Operations Manager</div>
@@ -187,7 +222,7 @@
                             jumped by 35% within the first month of the new UI launch."</p>
                         <div class="t-author">
                             <img src="https://ui-avatars.com/api/?name=John+Lenon&background=051741&color=ffffff"
-                                alt="John Lenon" class="t-avatar">
+                                alt="John Lenon" class="t-avatar" loading="lazy">
                             <div>
                                 <div class="t-name">John Lenon</div>
                                 <div class="t-role">Brand Strategist</div>

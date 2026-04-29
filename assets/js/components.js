@@ -36,6 +36,7 @@
     // ---------- HEADER (Top Bar + Navbar) ----------
     const headerHTML = `
     <header class="main-header">
+        <a href="#main-content" class="skip-link">Skip to Content</a>
         <div class="top-bar">
             <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="top-bar-info" style="display: flex; gap: 25px;">
@@ -47,16 +48,19 @@
                     </span>
                 </div>
                 <div class="top-bar-socials" style="display: flex; gap: 20px;">
-                    <a href="https://www.facebook.com/share/19GpqoZY9P/"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/firstflydigitalsolutions/"><i class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com/@firstflydigitalsolutions"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/share/19GpqoZY9P/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/firstflydigitalsolutions/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@firstflydigitalsolutions" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube channel"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         <nav class="navbar-new">
             <div class="container">
                 <a href="index.html" class="logo-elite">
-                    <img src="assets/images/Logo1.png" alt="First Fly Digital" style="height: 70px; transition: 0.3s;">
+                    <picture>
+                        <source srcset="assets/images/Logo1.webp" type="image/webp">
+                        <img src="assets/images/Logo1.png" alt="First Fly Digital" width="80" height="70" style="height: 70px; width: auto; transition: 0.3s;">
+                    </picture>
                 </a>
                 <div class="nav-links-elite">
                     <a href="index.html" class="${currentPage === 'index.html' || currentPage === '' ? 'active-elite' : ''}">Home</a>
@@ -89,9 +93,9 @@
                     <div class="footer-logo-elite"><img src="assets/images/Logo1.png" alt="First Fly Digital" style="height: 70px;"></div>
                     <p class="footer-mission">Architecting the future of digital engineering. From custom ERP systems to cinematic storytelling, we build the engines of modern business.</p>
                     <div class="footer-social-grid">
-                        <a href="https://www.facebook.com/share/19GpqoZY9P/" class="social-glass"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/firstflydigitalsolutions/" class="social-glass"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/@firstflydigitalsolutions" class="social-glass"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/share/19GpqoZY9P/" class="social-glass" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/firstflydigitalsolutions/" class="social-glass" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@firstflydigitalsolutions" class="social-glass" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
@@ -180,9 +184,9 @@
         <div class="drawer-footer">
             <p>Connect with us</p>
             <div class="footer-social-grid">
-                <a href="https://www.facebook.com/share/19GpqoZY9P/" class="social-glass"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/firstflydigitalsolutions/" class="social-glass"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/@firstflydigitalsolutions" class="social-glass"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/share/19GpqoZY9P/" class="social-glass" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/firstflydigitalsolutions/" class="social-glass" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@firstflydigitalsolutions" class="social-glass" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>

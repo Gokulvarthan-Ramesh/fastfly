@@ -22,6 +22,10 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
 
+    <!-- Performance: Preload -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/images/Logo1.png" as="image">
+
     <!-- Language & PWA -->
     <link rel="alternate" hreflang="en" href="https://firstflydigitalsolutions.com/contact.html">
     <link rel="alternate" hreflang="x-default" href="https://firstflydigitalsolutions.com/contact.html">
@@ -38,11 +42,11 @@
     
 
     <!-- SEO Meta -->
-    <title>Contact Us | First Fly Digital Solutions — Hire Digital Experts</title>
+    <title>Contact Us | Hire Digital Experts at First Fly Digital</title>
     <meta name="description"
-        content="Ready to scale? Contact First Fly Digital Solutions for a free consultation on ERP systems, custom web development, or Amazon/Flipkart management.">
+        content="Ready to scale? Contact First Fly Digital Solutions for a free consultation on enterprise ERP, custom web development, or Amazon/Flipkart management.">
     <meta name="keywords"
-        content="hire digital agency india, book digital consultation, web development quote, amazon flipkart management contact, first fly digital solutions contact, hire erp developers">
+        content="hire digital agency india, book digital consultation, enterprise erp development quote, amazon flipkart management contact, first fly digital solutions contact, hire expert developers india">
     <meta name="author" content="First Fly Digital Solutions">
     <link rel="canonical" href="https://firstflydigitalsolutions.com/contact.html">
 
@@ -84,7 +88,12 @@
                 "streetAddress": "Remote-First Agency",
                 "addressLocality": "Worldwide",
                 "addressCountry": "IN"
-            }
+            },
+            "sameAs": [
+                "https://www.facebook.com/share/19GpqoZY9P/",
+                "https://www.instagram.com/firstflydigitalsolutions/",
+                "https://youtube.com/@firstflydigitalsolutions"
+            ]
         }
     }
     </script>
@@ -114,7 +123,7 @@
     <!-- ========== NAVIGATION ========== -->
     <div id="navbar-placeholder"></div>
 
-    <main>
+    <main id="main-content">
         <section class="hero-inner">
             <div class="container">
                 <h1>Contact <span>Our Studio</span></h1>
@@ -135,21 +144,21 @@
                         <form id="contactForm" action="https://formspree.io/f/mqakezql" method="POST">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label>Your Name</label>
-                                    <input type="text" name="name" placeholder="John Doe" required>
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" placeholder="John Doe" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Email Address</label>
-                                    <input type="email" name="email" placeholder="john@example.com" required>
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Subject</label>
-                                <input type="text" name="subject" placeholder="Project Inquiry" required>
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
                             </div>
                             <div class="form-group">
-                                <label>Message</label>
-                                <textarea name="message" rows="5" placeholder="Tell us about your project..."
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..."
                                     required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary" style="width: 100%; border: none;">Send

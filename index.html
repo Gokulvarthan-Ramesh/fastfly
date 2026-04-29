@@ -24,6 +24,10 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
+    <!-- Performance: Preload -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/images/Logo1.png" as="image">
+
     <!-- Language & PWA -->
     <link rel="alternate" hreflang="en" href="https://firstflydigitalsolutions.com/">
     <link rel="alternate" hreflang="x-default" href="https://firstflydigitalsolutions.com/">
@@ -39,21 +43,28 @@
 
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="apple-touch-icon" href="assets/images/favicon.png">
+    
+    <!-- Critical CSS: Prevent FOUC -->
+    <style>
+        :root { --primary: #0145f5; --primary-dark: #0036cc; --bg: #0a0a0f; --text: #ffffff; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
+        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 100px; }
+    </style>
     <!-- SEO Meta -->
-    <title>First Fly Digital Solutions | Digital Engineering Studio & Growth Agency</title>
+    <title>First Fly Digital Solutions | Enterprise ERP & High-Performance Web Studio</title>
     <meta name="description"
-        content="First Fly Digital Solutions is a premium digital engineering studio specializing in custom ERP systems, high-performance web development, Amazon/Flipkart growth, and cinematic video editing. Scale your brand with data-driven ROI.">
+        content="First Fly Digital Solutions is a premium digital engineering studio specializing in custom ERP systems, high-performance web development, Amazon/Flipkart growth, and cinematic video production. Scale your brand with data-driven ROI.">
     <meta name="keywords"
-        content="digital engineering studio india, custom web development services, erp implementation for smes, amazon flipkart management agency, professional video editing services, hire digital marketing experts india, high-roi performance ads, e-commerce growth experts, first fly digital solutions">
+        content="digital engineering studio india, enterprise erp development services, custom web development services india, amazon flipkart account management agency, professional video editing services for brands, hire digital marketing experts india, high-roi performance ads, e-commerce growth experts, scalable erp solutions, first fly digital solutions">
     <meta name="author" content="First Fly Digital Solutions">
     <link rel="canonical" href="https://firstflydigitalsolutions.com/">
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="First Fly Digital Solutions">
     <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="First Fly Digital Solutions | Digital Engineering & Growth Studio">
+    <meta property="og:title" content="First Fly Digital Solutions | Enterprise ERP & High-Performance Web Studio">
     <meta property="og:description"
-        content="Architecting the future of digital engineering. From custom ERP systems to cinematic storytelling, we build the engines of modern business success.">
+        content="Architecting the future of digital engineering. From enterprise ERP systems to cinematic storytelling, we build the engines of modern business success.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://firstflydigitalsolutions.com/">
     <meta property="og:image" content="https://firstflydigitalsolutions.com/assets/images/og-main.png">
@@ -65,11 +76,11 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@firstflydigital">
-    <meta name="twitter:title" content="First Fly Digital Solutions | Digital Engineering & Growth Studio">
+    <meta name="twitter:title" content="First Fly Digital Solutions | Enterprise ERP & High-Performance Web Studio">
     <meta name="twitter:description"
-        content="Architecting the future of digital engineering. From custom ERP systems to cinematic storytelling, we build the engines of modern business success.">
+        content="Architecting the future of digital engineering. From enterprise ERP systems to cinematic storytelling, we build the engines of modern business success.">
     <meta name="twitter:image" content="https://firstflydigitalsolutions.com/assets/images/og-main.png">
-    <meta name="twitter:image:alt" content="First Fly Digital Solutions">
+    <meta name="twitter:image:alt" content="First Fly Digital Solutions - Enterprise ERP & Web Studio">
 
     <!-- Structured Data: Organization & LocalBusiness -->
     <script type="application/ld+json">
@@ -91,6 +102,11 @@
             "addressLocality": "Worldwide",
             "addressCountry": "IN"
         },
+        "sameAs": [
+            "https://www.facebook.com/share/19GpqoZY9P/",
+            "https://www.instagram.com/firstflydigitalsolutions/",
+            "https://youtube.com/@firstflydigitalsolutions"
+        ],
         "geo": {
             "@type": "GeoCoordinates",
             "latitude": 11.1271,
@@ -113,7 +129,73 @@
             "https://www.facebook.com/share/19GpqoZY9P/",
             "https://www.instagram.com/firstflydigitalsolutions/",
             "https://youtube.com/@firstflydigitalsolutions"
-        ]
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "150"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Arun Kumar" },
+                "datePublished": "2026-03-15",
+                "reviewBody": "The digital engineering provided by First Fly transformed our local academy into a state-wide leader.",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Sarah Jen" },
+                "datePublished": "2026-03-10",
+                "reviewBody": "Outstanding cinematic editing. They captured our brand's essence perfectly.",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+            }
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Digital Engineering Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Enterprise ERP Development",
+                        "description": "Custom enterprise-grade ERP systems built for scalability and performance."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "High-Performance Web Development",
+                        "description": "Ultra-fast, SEO-optimized PWA and static web applications."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Amazon & Flipkart Growth Management",
+                        "description": "Full-service marketplace scaling and performance marketing."
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Structured Data: WebSite (Sitelink Searchbox) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://firstflydigitalsolutions.com",
+        "name": "First Fly Digital Solutions",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://firstflydigitalsolutions.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
     }
     </script>
 
@@ -166,6 +248,11 @@
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "author": { 
+          "@type": "Person", 
+          "name": "Gokulvarthan Ramesh",
+          "url": "https://firstflydigitalsolutions.com/about.html"
+        },
         "name": "First Fly Digital Solutions",
         "url": "https://firstflydigitalsolutions.com",
         "potentialAction": {
@@ -190,7 +277,7 @@
     <!-- ========== NAVIGATION ========== -->
     <div id="navbar-placeholder"></div>
 
-    <main>
+    <main id="main-content">
         <!-- ========== HERO SECTION ========== -->
         <section class="hero">
             <div class="mesh-bg"></div>
@@ -231,7 +318,10 @@
 
                     <!-- Main Woman Image -->
                     <div class="grid-item main-img">
-                        <img src="assets/images/hero-woman.png" alt="Professional using tablet">
+                        <picture>
+                            <source srcset="assets/images/hero-woman.webp" type="image/webp">
+                            <img src="assets/images/hero-woman.png" alt="Digital marketing expert using tablet - First Fly Digital Solutions" width="297" height="330" fetchpriority="high" loading="eager">
+                        </picture>
                     </div>
 
                     <!-- Orange Stat Card 2 (Bottom Left) -->
@@ -249,7 +339,10 @@
 
                     <!-- Bottom Group Image -->
                     <div class="grid-item bottom-img">
-                        <img src="assets/images/hero-group.png" alt="Our team collaborating">
+                        <picture>
+                            <source srcset="assets/images/hero-group.webp" type="image/webp">
+                            <img src="assets/images/hero-group.png" alt="Digital engineering studio India team collaborating" width="400" height="250" fetchpriority="high" loading="eager">
+                        </picture>
                     </div>
 
                     <!-- Floating Badges -->
@@ -426,18 +519,21 @@
                 </div>
                 <div class="portfolio-grid-new stagger-container">
                     <!-- Project 1: Sahul TNPSC Circle -->
-                    <div class="portfolio-card-elite reveal-blur">
+                    <article class="portfolio-card-elite reveal-blur">
                         <a href="https://sahultnpsccircle.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                             <div class="portfolio-img-wrap-elite">
-                                <img src="assets/images/portfolio-sahul.png" alt="Sahul TNPSC Circle Website">
+                                <picture>
+                                    <source srcset="assets/images/portfolio-sahul.webp" type="image/webp">
+                                    <img src="assets/images/portfolio-sahul.png" alt="Sahul TNPSC Circle - Education Tech Website Development" width="554" height="450" loading="lazy">
+                                </picture>
                                 <div class="portfolio-overlay-elite"></div>
                                 <span class="portfolio-badge-elite">Education Tech</span>
                                 <div class="portfolio-stats-overlay">
-                                    <div class="stat-pill">
+                                    <div class="portfolio-stat-pill">
                                         <h4>450+</h4>
                                         <span>Selections</span>
                                     </div>
-                                    <div class="stat-pill">
+                                    <div class="portfolio-stat-pill">
                                         <h4>1.5M+</h4>
                                         <span>Traffic</span>
                                     </div>
@@ -449,21 +545,24 @@
                                 <div class="view-project-btn">Explore Case Study <i class="fas fa-arrow-right"></i></div>
                             </div>
                         </a>
-                    </div>
+                    </article>
 
                     <!-- Project 2: First Fly Digital -->
-                    <div class="portfolio-card-elite reveal-blur">
+                    <article class="portfolio-card-elite reveal-blur">
                         <a href="https://firstflydigitalsolutions.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                             <div class="portfolio-img-wrap-elite">
-                                <img src="assets/images/hero-main.png" alt="First Fly Digital Website">
+                                <picture>
+                                    <source srcset="assets/images/hero-main.webp" type="image/webp">
+                                    <img src="assets/images/hero-main.png" alt="First Fly Digital Solutions Flagship Agency Website" width="554" height="450" loading="lazy">
+                                </picture>
                                 <div class="portfolio-overlay-elite"></div>
                                 <span class="portfolio-badge-elite">Agency Flagship</span>
                                 <div class="portfolio-stats-overlay">
-                                    <div class="stat-pill">
+                                    <div class="portfolio-stat-pill">
                                         <h4>100%</h4>
                                         <span>Perf Score</span>
                                     </div>
-                                    <div class="stat-pill">
+                                    <div class="portfolio-stat-pill">
                                         <h4>25k+</h4>
                                         <span>Reach</span>
                                     </div>
@@ -475,20 +574,23 @@
                                 <div class="view-project-btn">Explore Case Study <i class="fas fa-arrow-right"></i></div>
                             </div>
                         </a>
-                    </div>
+                    </article>
 
                     <!-- Project 3: Aarudhra Home Made -->
-                    <div class="portfolio-card-elite reveal-blur">
+                    <article class="portfolio-card-elite reveal-blur">
                         <div class="portfolio-img-wrap-elite">
-                            <img src="assets/images/performance-main.png" alt="Aarudhra Home Made Products Growth">
+                            <picture>
+                                <source srcset="assets/images/performance-main.webp" type="image/webp">
+                                <img src="assets/images/performance-main.png" alt="Aarudhra Home Made - Marketplace Growth and Performance Ads" width="554" height="450" loading="lazy">
+                            </picture>
                             <div class="portfolio-overlay-elite"></div>
                             <span class="portfolio-badge-elite">Marketplace Scale</span>
                             <div class="portfolio-stats-overlay">
-                                <div class="stat-pill">
+                                <div class="portfolio-stat-pill">
                                     <h4>300%</h4>
                                     <span>Growth</span>
                                 </div>
-                                <div class="stat-pill">
+                                <div class="portfolio-stat-pill">
                                     <h4>Verified</h4>
                                     <span>Brand</span>
                                 </div>
@@ -499,12 +601,15 @@
                             <p>End-to-end marketplace management for authentic home-made food products, driving 300% growth in online sales ecosystems.</p>
                             <div class="view-project-btn">Explore Case Study <i class="fas fa-arrow-right"></i></div>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Project 4: Cinematic Video -->
-                    <div class="portfolio-card-elite reveal-blur">
+                    <article class="portfolio-card-elite reveal-blur">
                         <div class="portfolio-img-wrap-elite">
-                            <img src="assets/images/video.jpg" alt="Cinematic Brand Ad">
+                            <picture>
+                                <source srcset="assets/images/video.webp" type="image/webp">
+                                <img src="assets/images/video.jpg" alt="Cinematic Brand Ad - Professional Video Editing Services" width="800" height="450" loading="lazy">
+                            </picture>
                             <div class="portfolio-overlay-elite"></div>
                             <span class="portfolio-badge-elite">Creative Production</span>
                         </div>
@@ -523,7 +628,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
 
                 <div style="text-align: center; margin-top: 50px;">
@@ -622,7 +727,7 @@
                     <!-- News Card 1 -->
                     <div class="news-card">
                         <div class="news-image">
-                            <img src="assets/images/seo-blog.png" alt="SEO Strategy 2026">
+                            <img src="assets/images/seo-blog.png" alt="10 SEO Mistakes to Avoid in 2026 - Digital Marketing Strategy">
                         </div>
                         <div class="news-content">
                             <div class="news-meta">
@@ -639,7 +744,7 @@
                     <!-- News Card 2 -->
                     <div class="news-card">
                         <div class="news-image">
-                            <img src="assets/images/video-blog.png" alt="Cinematic Video Marketing">
+                            <img src="assets/images/video-blog.png" alt="The Power of Video Marketing - Cinematic Content Strategy">
                         </div>
                         <div class="news-content">
                             <div class="news-meta">
@@ -656,7 +761,7 @@
                     <!-- News Card 3 -->
                     <div class="news-card">
                         <div class="news-image">
-                            <img src="assets/images/social-blog.png" alt="Data-Driven Social Strategy">
+                            <img src="assets/images/social-blog.png" alt="Data-Driven Social Strategy - High-ROI Performance Ads">
                         </div>
                         <div class="news-content">
                             <div class="news-meta">

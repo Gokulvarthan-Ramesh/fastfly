@@ -53,6 +53,23 @@
     --header-height: 90px;
 }
 
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    z-index: 10000;
+    transition: 0.3s;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 0 0 10px 10px;
+}
+.skip-link:focus { top: 0; }
+
+
 /* ---------- HEADER & MOBILE FIXES ---------- */
 .navbar-new .container {
     display: flex !important;
@@ -1334,7 +1351,7 @@ select {
 .stat-pill span {
     font-size: 0.95rem !important;
     color: var(--secondary) !important;
-    opacity: 0.5 !important;
+    opacity: 0.8 !important;
     letter-spacing: 5px !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
@@ -3701,7 +3718,7 @@ select {
     z-index: 10 !important;
 }
 
-.stat-pill {
+.portfolio-stat-pill {
     background: rgba(5, 23, 65, 0.6) !important;
     backdrop-filter: blur(15px) !important;
     padding: 10px 20px !important;
@@ -3710,16 +3727,16 @@ select {
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-.stat-pill h4 {
+.portfolio-stat-pill h4 {
     font-size: 1rem !important;
     font-weight: 900 !important;
     margin: 0 !important;
 }
 
-.stat-pill span {
-    font-size: 0.6rem !important;
+.portfolio-stat-pill span {
+    font-size: 0.75rem !important;
     text-transform: uppercase !important;
-    opacity: 0.7 !important;
+    opacity: 0.9 !important;
 }
 
 .portfolio-content-elite {
