@@ -6,8 +6,8 @@
 /* ---------- CSS Custom Properties ---------- */
 :root {
     /* Primary & Accents */
-    --primary: #0145f5;
-    --primary-dark: #023395;
+    --primary: #0036cc;
+    --primary-dark: #002999;
     --primary-light: #eff4fa;
     --secondary: #051741;
     
@@ -68,6 +68,17 @@
     border-radius: 0 0 10px 10px;
 }
 .skip-link:focus { top: 0; }
+ 
+ /* Keyboard Accessibility: Focus Indicators */
+ *:focus-visible {
+     outline: 2px solid var(--primary) !important;
+     outline-offset: 4px !important;
+ }
+ 
+ /* Prevent focus outline on click for mouse users but keep it for keyboard */
+ *:focus:not(:focus-visible) {
+     outline: none !important;
+ }
 
 
 /* ---------- HEADER & MOBILE FIXES ---------- */

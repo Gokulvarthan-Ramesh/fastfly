@@ -148,15 +148,18 @@ document.addEventListener('DOMContentLoaded', () => {
       question.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
         
-        // Close all other items
+        // Close all other items and update ARIA
         faqItems.forEach(otherItem => {
           if (otherItem !== item) {
             otherItem.classList.remove('active');
+            const otherBtn = otherItem.querySelector('.faq-question-v3');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
           }
         });
         
-        // Toggle current item
-        item.classList.toggle('active');
+        // Toggle current item and update ARIA
+        const isNowActive = item.classList.toggle('active');
+        question.setAttribute('aria-expanded', isNowActive ? 'true' : 'false');
       });
     }
   });
