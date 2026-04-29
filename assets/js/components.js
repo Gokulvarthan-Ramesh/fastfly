@@ -57,7 +57,7 @@
         <nav class="navbar-new">
             <div class="container">
                 <a href="index.html" class="logo-elite">
-                    <picture><source srcset="assets/images/Logo1.webp" type="image/webp"><img src="assets/images/Logo1.png" alt="First Fly Digital" width="80" height="70" style="height: 70px; width: auto; transition: 0.3s;"></picture>
+                    <picture><source srcset="assets/images/Logo1.webp" type="image/webp"><img src="assets/images/Logo1.png" alt="First Fly Digital" fetchpriority="high" width="80" height="70" style="height: 70px; width: auto; transition: 0.3s;"></picture>
                 </a>
                 <div class="nav-links-elite">
                     <a href="index.html" class="${currentPage === 'index.html' || currentPage === '' ? 'active-elite' : ''}">Home</a>
@@ -87,7 +87,7 @@
         <div class="container">
             <div class="footer-top-section">
                 <div class="footer-brand-column">
-                    <div class="footer-logo-elite"><picture><source srcset="assets/images/Logo1.webp" type="image/webp"><img src="assets/images/Logo1.png" alt="First Fly Digital" width="80" height="70" style="height: 70px; width: auto; transition: 0.3s;"></picture></div>
+                    <div class="footer-logo-elite"><picture><source srcset="assets/images/Logo1.webp" type="image/webp"><img src="assets/images/Logo1.png" alt="First Fly Digital" fetchpriority="high" width="80" height="70" style="height: 70px; width: auto; transition: 0.3s;"></picture></div>
                     <p class="footer-mission">Architecting the future of digital engineering. From custom ERP systems to cinematic storytelling, we build the engines of modern business.</p>
                     <div class="footer-social-grid">
                         <a href="https://www.facebook.com/share/19GpqoZY9P/" class="social-glass" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -165,7 +165,7 @@
     <div class="drawer-overlay" id="drawerOverlay"></div>
     <div class="mobile-drawer" id="mobileDrawer">
         <div class="drawer-header">
-            <div class="footer-logo-elite"><picture><source srcset="assets/images/Logo1.webp" type="image/webp"><img src="assets/images/Logo1.png" alt="First Fly Digital" width="80" height="70" style="height: 70px; width: auto; transition: 0.3s;"></picture></div>
+            <div class="footer-logo-elite"><picture><source srcset="assets/images/Logo1.webp" type="image/webp"><img src="assets/images/Logo1.png" alt="First Fly Digital" fetchpriority="high" width="80" height="70" style="height: 70px; width: auto; transition: 0.3s;"></picture></div>
             <button id="closeDrawer" class="drawer-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
         </div>
         <nav class="drawer-nav">
@@ -198,7 +198,7 @@
     const preloaderHTML = `
         <div class="preloader">
             <div class="preloader-content">
-                <div class="logo" style="margin-bottom: 20px;"><picture><source srcset="assets/images/Logo1.webp" type="image/webp"><img src="assets/images/Logo1.png" alt="First Fly Digital" width="80" height="70" style="height: 70px; width: auto; transition: 0.3s;"></picture></div>
+                <div class="logo" style="margin-bottom: 20px;"><picture><source srcset="assets/images/Logo1.webp" type="image/webp"><img src="assets/images/Logo1.png" alt="First Fly Digital" fetchpriority="high" width="80" height="70" style="height: 70px; width: auto; transition: 0.3s;"></picture></div>
                 <div class="loader-bar"></div>
             </div>
         </div>
