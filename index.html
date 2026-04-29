@@ -43,8 +43,10 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
     <!-- Performance: Preload -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/css/style.css" as="style">
-    <link rel="preload" href="assets/images/Logo1.png" as="image">
+    <link rel="preload" href="assets/images/Logo1.webp" as="image">
 
     <!-- Language & PWA -->
     <link rel="alternate" hreflang="en" href="https://firstflydigitalsolutions.com/">
@@ -63,14 +65,17 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </noscript>
 
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.webp">
+    <link rel="apple-touch-icon" href="assets/images/favicon.webp">
     
     <!-- Critical CSS: Prevent FOUC -->
     <style>
         :root { --primary: #0145f5; --primary-dark: #0036cc; --bg: #0a0a0f; --text: #ffffff; }
         body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
         .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 100px; }
+        /* Font Visibility & Display Optimization */
+        @font-face { font-family: 'Font Awesome 6 Free'; font-display: swap; src: local('Font Awesome 6 Free'); }
+        @font-face { font-family: 'Font Awesome 6 Brands'; font-display: swap; src: local('Font Awesome 6 Brands'); }
     </style>
     <!-- SEO Meta -->
     <title>First Fly Digital Solutions | Enterprise ERP & High-Performance Web Studio</title>
@@ -89,7 +94,7 @@
         content="Architecting the future of digital engineering. From enterprise ERP systems to cinematic storytelling, we build the engines of modern business success.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://firstflydigitalsolutions.com/">
-    <meta property="og:image" content="https://firstflydigitalsolutions.com/assets/images/og-main.png">
+    <meta property="og:image" content="https://firstflydigitalsolutions.com/assets/images/og-main.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt"
@@ -101,7 +106,7 @@
     <meta name="twitter:title" content="First Fly Digital Solutions | Enterprise ERP & High-Performance Web Studio">
     <meta name="twitter:description"
         content="Architecting the future of digital engineering. From enterprise ERP systems to cinematic storytelling, we build the engines of modern business success.">
-    <meta name="twitter:image" content="https://firstflydigitalsolutions.com/assets/images/og-main.png">
+    <meta name="twitter:image" content="https://firstflydigitalsolutions.com/assets/images/og-main.webp">
     <meta name="twitter:image:alt" content="First Fly Digital Solutions - Enterprise ERP & Web Studio">
 
     <!-- Structured Data: Organization & LocalBusiness -->
@@ -112,8 +117,8 @@
         "name": "First Fly Digital Solutions",
         "alternateName": "FirstFly Digital Solutions",
         "url": "https://firstflydigitalsolutions.com",
-        "logo": "https://firstflydigitalsolutions.com/assets/images/logo.png",
-        "image": "https://firstflydigitalsolutions.com/assets/images/logo.png",
+        "logo": "https://firstflydigitalsolutions.com/assets/images/logo.webp",
+        "image": "https://firstflydigitalsolutions.com/assets/images/logo.webp",
         "description": "Premium digital engineering studio building fast, futuristic, and SEO-optimized static websites with graphic design, video editing, and digital marketing services.",
         "email": "firstflydigitalsolutions@gmail.com",
         "telephone": "+919025676853",
@@ -394,7 +399,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
 
                     <!-- Main Woman Image -->
                     <div class="grid-item main-img">
-                        <picture><source srcset="assets/images/hero-woman.webp" type="image/webp"><img src="assets/images/hero-woman.png" alt="Digital marketing expert using tablet - First Fly Digital Solutions" width="297" height="330" fetchpriority="high" loading="eager"></picture>
+                        <picture><source srcset="assets/images/hero-woman.webp" type="image/webp"><img src="assets/images/hero-woman.webp" alt="Digital marketing expert using tablet - First Fly Digital Solutions" width="297" height="330" fetchpriority="high" loading="eager"></picture>
                     </div>
 
                     <!-- Orange Stat Card 2 (Bottom Left) -->
@@ -412,7 +417,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
 
                     <!-- Bottom Group Image -->
                     <div class="grid-item bottom-img">
-                        <picture><source srcset="assets/images/hero-group.webp" type="image/webp"><img src="assets/images/hero-group.png" alt="Digital engineering studio India team collaborating" width="400" height="250" fetchpriority="high" loading="eager"></picture>
+                        <picture><source srcset="assets/images/hero-group.webp" type="image/webp"><img src="assets/images/hero-group.webp" alt="Digital engineering studio India team collaborating" width="400" height="250" fetchpriority="high" loading="eager"></picture>
                     </div>
 
                     <!-- Floating Badges -->
@@ -592,7 +597,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <article class="portfolio-card-elite reveal-blur">
                         <a href="https://sahultnpsccircle.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                             <div class="portfolio-img-wrap-elite">
-                                <picture><source srcset="assets/images/portfolio-sahul.webp" type="image/webp"><img src="assets/images/portfolio-sahul.png" alt="Sahul TNPSC Circle - Education Tech Website Development" width="554" height="350" loading="lazy"></picture>
+                                <picture><source srcset="assets/images/portfolio-sahul.webp" type="image/webp"><img src="assets/images/portfolio-sahul.webp" alt="Sahul TNPSC Circle - Education Tech Website Development" width="554" height="350" loading="lazy"></picture>
                                 <div class="portfolio-overlay-elite"></div>
                                 <span class="portfolio-badge-elite">Education Tech</span>
                                 <div class="portfolio-stats-overlay">
@@ -618,7 +623,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <article class="portfolio-card-elite reveal-blur">
                         <a href="https://firstflydigitalsolutions.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                             <div class="portfolio-img-wrap-elite">
-                                <picture><source srcset="assets/images/hero-main.webp" type="image/webp"><img src="assets/images/hero-main.png" alt="First Fly Digital Solutions Flagship Agency Website" width="554" height="350" loading="lazy"></picture>
+                                <picture><source srcset="assets/images/hero-main.webp" type="image/webp"><img src="assets/images/hero-main.webp" alt="First Fly Digital Solutions Flagship Agency Website" width="554" height="350" loading="lazy"></picture>
                                 <div class="portfolio-overlay-elite"></div>
                                 <span class="portfolio-badge-elite">Agency Flagship</span>
                                 <div class="portfolio-stats-overlay">
@@ -643,7 +648,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- Project 3: Aarudhra Home Made -->
                     <article class="portfolio-card-elite reveal-blur">
                         <div class="portfolio-img-wrap-elite">
-                            <picture><source srcset="assets/images/performance-main.webp" type="image/webp"><img src="assets/images/performance-main.png" alt="Aarudhra Home Made - Marketplace Growth and Performance Ads" width="554" height="350" loading="lazy"></picture>
+                            <picture><source srcset="assets/images/performance-main.webp" type="image/webp"><img src="assets/images/performance-main.webp" alt="Aarudhra Home Made - Marketplace Growth and Performance Ads" width="554" height="350" loading="lazy"></picture>
                             <div class="portfolio-overlay-elite"></div>
                             <span class="portfolio-badge-elite">Marketplace Scale</span>
                             <div class="portfolio-stats-overlay">
@@ -711,7 +716,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <div class="t-quote-icon"><i class="fas fa-quote-right"></i></div>
                     <p class="t-text">"The digital engineering provided by First Fly transformed our local academy into a state-wide leader. Their ERP system is flawless."</p>
                     <div class="t-author">
-                        <img src="https://ui-avatars.com/api/?name=Arun+Kumar&background=0145f5&color=ffffff" alt="Arun Kumar" class="t-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Arun+Kumar&background=0145f5&color=ffffff" alt="Arun Kumar" class="t-avatar" width="60" height="60" loading="lazy">
                         <div>
                             <div class="t-name">Arun Kumar</div>
                             <div class="t-role">Academy Director</div>
@@ -724,7 +729,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <div class="t-quote-icon"><i class="fas fa-quote-right"></i></div>
                     <p class="t-text">"Outstanding cinematic editing. They captured our brand's essence perfectly in a 60-second spot. Highly recommended for creative work."</p>
                     <div class="t-author">
-                        <img src="https://ui-avatars.com/api/?name=Sarah+Jen&background=051741&color=ffffff" alt="Sarah Jen" class="t-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+Jen&background=051741&color=ffffff" alt="Sarah Jen" class="t-avatar" width="60" height="60" loading="lazy">
                         <div>
                             <div class="t-name">Sarah Jen</div>
                             <div class="t-role">Marketing Head</div>
@@ -737,7 +742,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <div class="t-quote-icon"><i class="fas fa-quote-right"></i></div>
                     <p class="t-text">"Managed our Amazon growth from zero to lakhs in revenue within months. Their data-driven approach to ads is unmatched."</p>
                     <div class="t-author">
-                        <img src="https://ui-avatars.com/api/?name=Rajesh+V&background=0145f5&color=ffffff" alt="Rajesh V" class="t-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Rajesh+V&background=0145f5&color=ffffff" alt="Rajesh V" class="t-avatar" width="60" height="60" loading="lazy">
                         <div>
                             <div class="t-name">Rajesh V</div>
                             <div class="t-role">E-commerce Founder</div>
@@ -785,7 +790,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- News Card 1 -->
                     <div class="news-card">
                         <div class="news-image">
-                            <img src="assets/images/seo-blog.png" alt="10 SEO Mistakes to Avoid in 2026 - Digital Marketing Strategy">
+                            <img src="assets/images/seo-blog.webp" alt="10 SEO Mistakes to Avoid in 2026 - Digital Marketing Strategy" width="400" height="250" loading="lazy">
                         </div>
                         <div class="news-content">
                             <div class="news-meta">
@@ -801,7 +806,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- News Card 2 -->
                     <div class="news-card">
                         <div class="news-image">
-                            <img src="assets/images/video-blog.png" alt="The Power of Video Marketing - Cinematic Content Strategy">
+                            <img src="assets/images/video-blog.webp" alt="The Power of Video Marketing - Cinematic Content Strategy" width="400" height="250" loading="lazy">
                         </div>
                         <div class="news-content">
                             <div class="news-meta">
@@ -817,7 +822,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- News Card 3 -->
                     <div class="news-card">
                         <div class="news-image">
-                            <img src="assets/images/social-blog.png" alt="Data-Driven Social Strategy - High-ROI Performance Ads">
+                            <img src="assets/images/social-blog.webp" alt="Data-Driven Social Strategy - High-ROI Performance Ads" width="400" height="250" loading="lazy">
                         </div>
                         <div class="news-content">
                             <div class="news-meta">

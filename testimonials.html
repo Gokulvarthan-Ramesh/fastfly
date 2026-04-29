@@ -43,8 +43,10 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
     <!-- Performance: Preload -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/css/style.css" as="style">
-    <link rel="preload" href="assets/images/Logo1.png" as="image">
+    <link rel="preload" href="assets/images/Logo1.webp" as="image">
 
     <!-- Language & PWA -->
     <link rel="alternate" hreflang="en" href="https://firstflydigitalsolutions.com/testimonials.html">
@@ -58,8 +60,8 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript></noscript>
 
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.webp">
+    <link rel="apple-touch-icon" href="assets/images/favicon.webp">
 
     <!-- SEO Meta -->
     <title>Testimonials | First Fly Digital Solutions — Client Success Stories</title>
@@ -77,7 +79,7 @@
     <meta property="og:description" content="Verified feedback from the leaders and visionaries we've partnered with.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://firstflydigitalsolutions.com/testimonials.html">
-    <meta property="og:image" content="https://firstflydigitalsolutions.com/assets/images/logo.png">
+    <meta property="og:image" content="https://firstflydigitalsolutions.com/assets/images/logo.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="First Fly Digital Solutions Testimonials">
@@ -87,7 +89,7 @@
     <meta name="twitter:site" content="@firstflydigital">
     <meta name="twitter:title" content="Testimonials | First Fly Digital Solutions">
     <meta name="twitter:description" content="Verified feedback from the leaders and visionaries we've partnered with.">
-    <meta name="twitter:image" content="https://firstflydigitalsolutions.com/assets/images/logo.png">
+    <meta name="twitter:image" content="https://firstflydigitalsolutions.com/assets/images/logo.webp">
     <meta name="twitter:image:alt" content="First Fly Digital Solutions Testimonials">
 
     <!-- Structured Data: BreadcrumbList -->
@@ -108,7 +110,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "First Fly Digital Solutions",
-        "image": "https://firstflydigitalsolutions.com/assets/images/logo.png",
+        "image": "https://firstflydigitalsolutions.com/assets/images/logo.webp",
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
@@ -185,6 +187,9 @@
 }
 
 body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        /* Font Visibility & Display Optimization */
+        @font-face { font-family: 'Font Awesome 6 Free'; font-display: swap; src: local('Font Awesome 6 Free'); }
+        @font-face { font-family: 'Font Awesome 6 Brands'; font-display: swap; src: local('Font Awesome 6 Brands'); }
     </style>
     <link rel="stylesheet" href="assets/css/style.css?v=7">
 </head>

@@ -72,7 +72,7 @@
         content="A curated showcase of premium digital experiences crafted for ambitious brands.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://firstflydigitalsolutions.com/portfolio.html">
-    <meta property="og:image" content="https://firstflydigitalsolutions.com/assets/images/logo.png">
+    <meta property="og:image" content="https://firstflydigitalsolutions.com/assets/images/logo.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="First Fly Digital Solutions Portfolio">
@@ -83,7 +83,7 @@
     <meta name="twitter:title" content="Portfolio | Case Studies in Digital Engineering & Growth">
     <meta name="twitter:description"
         content="A curated showcase of premium digital experiences crafted for ambitious brands.">
-    <meta name="twitter:image" content="https://firstflydigitalsolutions.com/assets/images/logo.png">
+    <meta name="twitter:image" content="https://firstflydigitalsolutions.com/assets/images/logo.webp">
     <meta name="twitter:image:alt" content="First Fly Digital Solutions Portfolio">
 
     <!-- Structured Data: CollectionPage -->
@@ -172,8 +172,13 @@
 }
 
 body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        /* Font Visibility & Display Optimization */
+        @font-face { font-family: 'Font Awesome 6 Free'; font-display: swap; src: local('Font Awesome 6 Free'); }
+        @font-face { font-family: 'Font Awesome 6 Brands'; font-display: swap; src: local('Font Awesome 6 Brands'); }
     </style>
     <link rel="stylesheet" href="assets/css/style.css?v=7">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
 <body>
@@ -213,7 +218,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                         <a href="https://sahultnpsccircle.com/" target="_blank" rel="noopener noreferrer"
                             style="text-decoration: none; color: inherit;">
                             <div class="portfolio-img-wrap-new">
-                                <picture><source srcset="assets/images/portfolio-sahul.webp" type="image/webp"><img src="assets/images/portfolio-sahul.png" alt="Sahul TNPSC Circle - Education Tech Website Development" width="554" height="450" loading="lazy"></picture>
+                                <picture><source srcset="assets/images/portfolio-sahul.webp" type="image/webp"><img src="assets/images/portfolio-sahul.webp" alt="Sahul TNPSC Circle - Education Tech Website Development" width="554" height="450" loading="lazy"></picture>
                                 <span class="portfolio-tag-new">Education</span>
                                 <span class="portfolio-url-new">sahultnpsccircle.com</span>
                             </div>
@@ -247,7 +252,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- Project 2: Reels Editing -->
                     <div class="portfolio-card-new reveal">
                         <div class="portfolio-img-wrap-new">
-                            <img src="assets/images/portfolio-reels.png" alt="Viral Reels Production - Cinematic Video Editing for Personal Brands">
+                            <img src="assets/images/portfolio-reels.webp" alt="Viral Reels Production - Cinematic Video Editing for Personal Brands">
                             <span class="portfolio-tag-new">Video Production</span>
                             <span class="portfolio-url-new">Instagram / YouTube</span>
                         </div>
@@ -278,7 +283,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- Project 3: Meta Ads -->
                     <div class="portfolio-card-new reveal">
                         <div class="portfolio-img-wrap-new">
-                            <img src="assets/images/portfolio-meta.png" alt="Meta Ads Conversion Campaign - High-ROI Performance Marketing">
+                            <img src="assets/images/portfolio-meta.webp" alt="Meta Ads Conversion Campaign - High-ROI Performance Marketing">
                             <span class="portfolio-tag-new">Performance Marketing</span>
                             <span class="portfolio-url-new">Facebook & Instagram Ads</span>
                         </div>
@@ -309,7 +314,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- Project 4: E-commerce Mobile App -->
                     <div class="portfolio-card-new reveal">
                         <div class="portfolio-img-wrap-new">
-                            <img src="assets/images/service-dev.png" alt="E-commerce Mobile App Development - Android and iOS Solutions">
+                            <img src="assets/images/service-dev.webp" alt="E-commerce Mobile App Development - Android and iOS Solutions">
                             <span class="portfolio-tag-new">Mobile App</span>
                             <span class="portfolio-url-new">Android & iOS</span>
                         </div>
@@ -340,7 +345,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- Project 5: Marketplace Scale -->
                     <div class="portfolio-card-new reveal">
                         <div class="portfolio-img-wrap-new">
-                            <picture><source srcset="assets/images/performance-main.webp" type="image/webp"><img src="assets/images/performance-main.png" alt="Aarudhra Home Made - Marketplace Growth and Performance Ads" width="554" height="450" loading="lazy"></picture>
+                            <picture><source srcset="assets/images/performance-main.webp" type="image/webp"><img src="assets/images/performance-main.webp" alt="Aarudhra Home Made - Marketplace Growth and Performance Ads" width="554" height="450" loading="lazy"></picture>
                             <span class="portfolio-tag-new">Marketplace</span>
                             <span class="portfolio-url-new">Flipkart Growth Specialist</span>
                         </div>
@@ -371,7 +376,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- Project 6: Cinematic Brand Story -->
                     <div class="portfolio-card-new reveal">
                         <div class="portfolio-img-wrap-new">
-                            <img src="assets/images/intro-video.png" width="554" height="450" loading="lazy" alt="Cinematic Brand Story - Professional 4K Video Production">
+                            <img src="assets/images/intro-video.webp" width="554" height="450" loading="lazy" alt="Cinematic Brand Story - Professional 4K Video Production">
                             <span class="portfolio-tag-new">Creative</span>
                             <span class="portfolio-url-new">4K Production</span>
                         </div>

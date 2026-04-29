@@ -6,27 +6,34 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ---------- Navbar Scroll Effect ----------
+  // ---------- Navbar Scroll Effect (Optimized) ----------
   const mainHeader = document.querySelector('.main-header');
   const scrollTopBtn = document.querySelector('.scroll-top');
+  let lastScrollY = window.scrollY;
+  let ticking = false;
 
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
+    lastScrollY = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        // Header scroll state
+        if (lastScrollY > 60) {
+          mainHeader?.classList.add('scrolled');
+        } else {
+          mainHeader?.classList.remove('scrolled');
+        }
 
-    // Header scroll state
-    if (scrollY > 60) {
-      mainHeader?.classList.add('scrolled');
-    } else {
-      mainHeader?.classList.remove('scrolled');
-    }
-
-    // Scroll-to-top visibility
-    if (scrollTopBtn) {
-      if (scrollY > 400) {
-        scrollTopBtn.classList.add('visible');
-      } else {
-        scrollTopBtn.classList.remove('visible');
-      }
+        // Scroll-to-top visibility
+        if (scrollTopBtn) {
+          if (lastScrollY > 400) {
+            scrollTopBtn.classList.add('visible');
+          } else {
+            scrollTopBtn.classList.remove('visible');
+          }
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
   });
 
