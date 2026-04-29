@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="preload" as="image" href="assets/images/Logo1.webp" fetchpriority="high">
-        <!-- Optimized Google Tag Manager (Lazy Loaded) -->
+    <!-- Optimized Google Tag Manager (Lazy Loaded) -->
     <script>
       (function() {
         var gtmLoaded = false;
@@ -38,15 +37,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
-
-    <!-- Performance: Preload -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Critical Preloads -->
+    <link rel="preload" href="assets/images/logo-main-v2.png" as="image" fetchpriority="high">
+    <link rel="preload" href="assets/images/hero-woman.webp" as="image" fetchpriority="high">
     <link rel="preload" href="assets/css/style.css" as="style">
-    <link rel="preload" href="assets/images/Logo1.webp" as="image">
 
     <!-- Language & PWA -->
     <link rel="alternate" hreflang="en" href="https://firstflydigitalsolutions.com/">
@@ -81,9 +78,6 @@
         }
         body { background: var(--bg-body); color: var(--text-main); font-family: var(--font-main); margin: 0; overflow-x: hidden; }
         .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 100px; }
-        /* Font Visibility & Display Optimization */
-        @font-face { font-family: 'Font Awesome 6 Free'; font-display: swap; src: local('Font Awesome 6 Free'); }
-        @font-face { font-family: 'Font Awesome 6 Brands'; font-display: swap; src: local('Font Awesome 6 Brands'); }
     </style>
     <!-- SEO Meta -->
     <title>First Fly Digital Solutions | Enterprise ERP & High-Performance Web Studio</title>
@@ -106,7 +100,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt"
-        content="First Fly Digital Solutions — Digital Engineering & Growth Studio">
+        content="First Fly Digital Solutions â€” Digital Engineering & Growth Studio">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -132,7 +126,7 @@
             "description": "Premium digital engineering studio building fast, futuristic, and SEO-optimized static websites with graphic design, video editing, and digital marketing services.",
             "email": "firstflydigitalsolutions@gmail.com",
             "telephone": "+919025676853",
-            "priceRange": "₹₹",
+            "priceRange": "â‚¹â‚¹",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Remote-First Agency",
@@ -207,7 +201,7 @@
     </script>
 
 
-    <link rel="stylesheet" href="assets/css/style.css?v=7">
+    <link rel="stylesheet" href="assets/css/style.css?v=11">
 
     <!-- Scripts (Critical) -->
     <script src="assets/js/components.js" defer></script>
@@ -226,12 +220,12 @@
             <div class="mesh-bg"></div>
             <div class="container">
                 <div class="hero-content stagger-container">
-                    <h1 class="reveal-up">Master Your Market with <span class="elegant-text">Next-Gen</span> Digital Engineering</h1>
-                    <p class="reveal-up">From custom <span class="elegant-text">billing software</span> and ERP solutions to
-                        high-performance web apps, cinematic video editing, and expert Amazon/Flipkart growth — we build
+                    <h1 class="hero-title">Master Your Market with <span class="elegant-text">Next-Gen</span> Digital Engineering</h1>
+                    <p class="hero-subtitle">From custom <span class="elegant-text">billing software</span> and ERP solutions to
+                        high-performance web apps, cinematic video editing, and expert Amazon/Flipkart growth â€” we build
                         the engines that drive your success.</p>
 
-                    <div class="reveal-up" style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 35px;">
+                    <div class="hero-btns" style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 35px;">
                         <a href="#services" class="btn btn-primary">Our Services</a>
                         <a href="contact.html" class="btn btn-outline">
                             <i class="fas fa-calendar-check" style="margin-right: 10px; color: var(--primary);"></i>
@@ -242,7 +236,7 @@
 
                 </div>
 
-                <div class="hero-visual-grid reveal-right">
+                <div class="hero-visual-grid">
                     <!-- Watch Video Button -->
                     <button class="watch-video-btn" aria-label="Watch video">
                         <i class="fas fa-play"></i>
@@ -304,7 +298,7 @@
         </section>
 
         <!-- ========== TRUST STRIP ========== -->
-        <section class="trust-strip-v2">
+        <!-- <section class="trust-strip-v2">
             <div class="container">
                 <div class="trust-strip-wrapper reveal-blur">
                     <div class="trust-item">
@@ -326,7 +320,7 @@
                     <div class="trust-item">
                         <div class="trust-icon"><i class="fas fa-chart-line"></i></div>
                         <div class="trust-text">
-                            <div class="stat-value">₹8Cr+</div>
+                            <div class="stat-value">â‚¹8Cr+</div>
                             <p>Ad Spend</p>
                         </div>
                     </div>
@@ -340,7 +334,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- ========== SERVICES SECTION ========== -->
         <section class="services-section-centered" id="services">
@@ -534,7 +528,7 @@
                     <!-- Project 4: Cinematic Video -->
                     <article class="portfolio-card-elite reveal-blur">
                         <div class="portfolio-img-wrap-elite">
-                            <picture><source srcset="assets/images/video.webp" type="image/webp"><img src="assets/images/video.jpg" alt="Cinematic Brand Ad - Professional Video Editing Services" width="800" height="450" loading="lazy"></picture>
+                            <picture><source srcset="assets/images/video.webp" type="image/webp"><img src="assets/images/video.webp" alt="Cinematic Brand Ad - Professional Video Editing Services" width="800" height="450" loading="lazy"></picture>
                             <div class="portfolio-overlay-elite"></div>
                             <span class="portfolio-badge-elite">Creative Production</span>
                         </div>

@@ -94,21 +94,23 @@ document.addEventListener('DOMContentLoaded', () => {
   let docHeight = 0;
   let scrollTicking = false;
 
-  // Delay calculation to avoid forced reflow during initial load
-  requestAnimationFrame(() => {
+  // Use ResizeObserver to track document height changes without triggering reflows manually
+  const resizeObserver = new ResizeObserver(() => {
     docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   });
+  resizeObserver.observe(document.body);
 
-  window.addEventListener('resize', () => {
+  // Initial calculation after a delay to allow components to load
+  setTimeout(() => {
     docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  });
+  }, 500);
+
 
   window.addEventListener('scroll', () => {
     if (!scrollTicking) {
       requestAnimationFrame(() => {
-        if (docHeight === 0) {
-           docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        }
+        if (docHeight <= 0) return;
+
         const winScroll = window.pageYOffset || document.documentElement.scrollTop;
         const scrolled = (winScroll / docHeight) * 100;
         progressBar.style.width = scrolled + "%";

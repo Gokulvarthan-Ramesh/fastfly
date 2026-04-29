@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="preload" as="image" href="assets/images/Logo1.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/logo-main-v2.png" fetchpriority="high">
         <!-- Optimized Google Tag Manager (Lazy Loaded) -->
     <script>
       (function() {
@@ -46,7 +46,7 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/css/style.css" as="style">
-    <link rel="preload" href="assets/images/Logo1.webp" as="image">
+    <link rel="preload" href="assets/images/logo-main-v2.png" as="image">
 
     <!-- Language & PWA -->
     <link rel="alternate" hreflang="en" href="https://firstflydigitalsolutions.com/blog.html">
@@ -76,7 +76,7 @@
     <!-- Open Graph -->
     <meta property="og:site_name" content="First Fly Digital Solutions">
     <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Blog | First Fly Digital Solutions — Digital Marketing Insights">
+    <meta property="og:title" content="Blog | First Fly Digital Solutions â€” Digital Marketing Insights">
     <meta property="og:description"
         content="Expert digital marketing insights, SEO tips, and growth strategies from our team.">
     <meta property="og:type" content="website">
@@ -191,63 +191,24 @@
     }
     </script>
 
-        <link rel="preload" href="assets/css/style.css?v=7" as="style">
+        <link rel="preload" href="assets/css/style.css?v=11" as="style">
+    <!-- Critical CSS: Prevent FOUC -->
     <style>
-:root {
-    /* Primary & Accents */
-    --primary: #0036cc;
-    --primary-dark: #002999;
-    --primary-light: #eff4fa;
-    --secondary: #051741;
-    
-    /* Backgrounds */
-    --bg-body: #eff4fa;
-    --bg-white: #FFFFFF;
-    --bg-dark: #051741;
-    --bg-light: #eff4fa;
-    --bg-glass: rgba(255, 255, 255, 0.75);
-    --bg-glass-dark: rgba(5, 23, 65, 0.85);
-
-    /* Text Colors */
-    --text-main: #051741;
-    --text-muted: #475569;
-    --text-light: #2563eb;
-    --text-white: #FFFFFF;
-
-    /* Border & Divider */
-    --border-light: rgba(1, 69, 245, 0.1);
-    --border-glass: rgba(255, 255, 255, 0.3);
-
-    /* Typography */
-    --font-main: 'Inter', sans-serif;
-    --font-heading: 'Outfit', sans-serif;
-    --font-elegant: 'Playfair Display', serif;
-    --fs-h1: clamp(2.5rem, 6vw, 4.5rem);
-    --fs-h2: clamp(2rem, 5vw, 3rem);
-    --fs-h3: clamp(1.5rem, 3vw, 2rem);
-    --fs-body: 1rem;
-
-    /* Spacing & Radii */
-    --radius-lg: 24px;
-    --radius-md: 14px;
-    --radius-sm: 8px;
-    --radius-pill: 50px;
-    --section-padding: 100px 0;
-    --container-width: 1200px;
-
-    /* Shadows & Transitions */
-    --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    --transition-elegant: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
-    --header-height: 90px;
-}
-
-body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        /* Font Visibility & Display Optimization */
-        @font-face { font-family: 'Font Awesome 6 Free'; font-display: swap; src: local('Font Awesome 6 Free'); }
-        @font-face { font-family: 'Font Awesome 6 Brands'; font-display: swap; src: local('Font Awesome 6 Brands'); }
+        :root {
+            --primary: #0036cc;
+            --primary-dark: #002999;
+            --primary-light: #eff4fa;
+            --secondary: #051741;
+            --bg-body: #eff4fa;
+            --text-main: #051741;
+            --font-main: 'Inter', sans-serif;
+            --font-heading: 'Outfit', sans-serif;
+            --header-height: 90px;
+        }
+        body { background: var(--bg-body); color: var(--text-main); font-family: var(--font-main); margin: 0; overflow-x: hidden; }
     </style>
-    <link rel="stylesheet" href="assets/css/style.css?v=7">
+    <link rel="stylesheet" href="assets/css/fontawesome-subset.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="assets/css/fontawesome-subset.css"></noscript>
+    <link rel="stylesheet" href="assets/css/style.css?v=11">
 </head>
 
 <body>
@@ -284,7 +245,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- Blog Post 1 -->
                     <article class="news-card">
                         <div class="news-image">
-                            <img src="assets/images/seo.jpg" alt="10 SEO Mistakes to Avoid in 2026 - Search Engine Optimization Strategy" loading="lazy">
+                            <picture><source srcset="assets/images/seo-blog.webp" type="image/webp"><img src="assets/images/seo-blog.webp" alt="10 SEO Mistakes to Avoid in 2026 - Search Engine Optimization Strategy" width="800" height="450" loading="lazy"></picture>
                         </div>
                         <div class="news-content">
                             <div class="news-meta">
@@ -300,7 +261,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- Blog Post 2 -->
                     <article class="news-card">
                         <div class="news-image">
-                            <picture><source srcset="assets/images/video.webp" type="image/webp"><img src="assets/images/video.jpg" alt="Cinematic Brand Ad - Professional Video Editing Services" width="800" height="450" loading="lazy"></picture>
+                            <picture><source srcset="assets/images/video.webp" type="image/webp"><img src="assets/images/video.webp" alt="Cinematic Brand Ad - Professional Video Editing Services" width="800" height="450" loading="lazy"></picture>
                         </div>
                         <div class="news-content">
                             <div class="news-meta">
@@ -332,7 +293,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- Blog Post 4 -->
                     <div class="news-card">
                         <div class="news-image">
-                            <img src="assets/images/seo.jpg" alt="Web Performance Optimization - Page Speed and SEO Impact" loading="lazy">
+                            <picture><source srcset="assets/images/seo-blog.webp" type="image/webp"><img src="assets/images/seo-blog.webp" alt="Web Performance Optimization - Page Speed and SEO Impact" width="800" height="450" loading="lazy"></picture>
                         </div>
                         <div class="news-content">
                             <div class="news-meta">
@@ -364,7 +325,7 @@ body { background: #eff4fa; margin: 0; padding: 0; font-family: 'Inter', sans-se
                     <!-- Blog Post 6 -->
                     <div class="news-card">
                         <div class="news-image">
-                            <picture><source srcset="assets/images/video.webp" type="image/webp"><img src="assets/images/video.jpg" alt="Cinematic Brand Ad - Professional Video Editing Services" width="800" height="450" loading="lazy"></picture>
+                            <picture><source srcset="assets/images/video.webp" type="image/webp"><img src="assets/images/video.webp" alt="Cinematic Brand Ad - Professional Video Editing Services" width="800" height="450" loading="lazy"></picture>
                         </div>
                         <div class="news-content">
                             <div class="news-meta">

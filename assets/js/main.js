@@ -13,11 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let ticking = false;
 
   // Initial check after paint to avoid reflow
-  requestAnimationFrame(() => {
-    lastScrollY = window.scrollY;
-    if (lastScrollY > 60) mainHeader?.classList.add('scrolled');
-    if (scrollTopBtn && lastScrollY > 400) scrollTopBtn.classList.add('visible');
-  });
+  // Delay initial check slightly to ensure DOM stability after components.js
+  setTimeout(() => {
+    requestAnimationFrame(() => {
+      lastScrollY = window.scrollY;
+      if (lastScrollY > 60) mainHeader?.classList.add('scrolled');
+      if (scrollTopBtn && lastScrollY > 400) scrollTopBtn.classList.add('visible');
+    });
+  }, 300);
 
   window.addEventListener('scroll', () => {
     lastScrollY = window.scrollY;
