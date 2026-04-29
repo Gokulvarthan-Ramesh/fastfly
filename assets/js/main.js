@@ -9,8 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------- Navbar Scroll Effect (Optimized) ----------
   const mainHeader = document.querySelector('.main-header');
   const scrollTopBtn = document.querySelector('.scroll-top');
-  let lastScrollY = window.scrollY;
+  let lastScrollY = 0; // Start at 0 to avoid immediate reflow
   let ticking = false;
+
+  // Initial check after paint to avoid reflow
+  requestAnimationFrame(() => {
+    lastScrollY = window.scrollY;
+    if (lastScrollY > 60) mainHeader?.classList.add('scrolled');
+    if (scrollTopBtn && lastScrollY > 400) scrollTopBtn.classList.add('visible');
+  });
 
   window.addEventListener('scroll', () => {
     lastScrollY = window.scrollY;
@@ -35,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       ticking = true;
     }
-  });
+  }, { passive: true });
 
   // Scroll-to-top click
   if (scrollTopBtn) {
@@ -86,9 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (hamburger) hamburger.addEventListener('click', toggleDrawer);
   if (drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
   if (closeDrawer) closeDrawer.addEventListener('click', toggleDrawer);
-  if (drawerOverlay) {
-    drawerOverlay.addEventListener('click', toggleDrawer);
-  }
+
   drawerLinks.forEach(link => {
     link.addEventListener('click', () => {
       if (mobileDrawer.classList.contains('open')) {

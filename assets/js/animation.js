@@ -91,8 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
   document.body.appendChild(progressBar);
 
-  let docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let docHeight = 0;
   let scrollTicking = false;
+
+  // Delay calculation to avoid forced reflow during initial load
+  requestAnimationFrame(() => {
+    docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  });
 
   window.addEventListener('resize', () => {
     docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -101,6 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     if (!scrollTicking) {
       requestAnimationFrame(() => {
+        if (docHeight === 0) {
+           docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        }
         const winScroll = window.pageYOffset || document.documentElement.scrollTop;
         const scrolled = (winScroll / docHeight) * 100;
         progressBar.style.width = scrolled + "%";
@@ -108,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       scrollTicking = true;
     }
-  });
+  }, { passive: true });
 
   // ---------- Scroll Reveal (IntersectionObserver) ----------
   const revealOptions = {
