@@ -3219,6 +3219,7 @@ select {
 }
 
 .floating-card {
+    display: block;
     background: #ffffff;
     border-radius: 20px;
     padding: 60px 40px 40px;
@@ -3888,13 +3889,20 @@ select {
 .legal-links {
     display: flex !important;
     gap: 30px !important;
-    margin-top: 10px !important;
+    margin-top: 15px !important;
 }
 
 .legal-links a {
-    font-size: 0.8rem !important;
-    color: rgba(255, 255, 255, 0.3) !important;
+    font-size: 0.85rem !important;
+    color: rgba(255, 255, 255, 0.7) !important;
     text-decoration: none !important;
+    transition: 0.3s !important;
+    border-bottom: 1px solid transparent !important;
+}
+
+.legal-links a:hover {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
 }
 
 .scroll-top-label {
@@ -4145,6 +4153,6 @@ select {
 }
 
 
- 
 
 /* ============================================================
+

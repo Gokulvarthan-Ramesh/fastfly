@@ -127,10 +127,10 @@
             
             <div class="footer-bottom-elite">
                 <div class="copyright-wrap">
-                    <p>&copy; 2026 First Fly Digital. All rights reserved.</p>
+                    <p>&copy; 2026 First Fly Digital Solutions. All rights reserved.</p>
                     <div class="legal-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms</a>
                     </div>
                 </div>
                 <div class="scroll-top-label" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
@@ -145,7 +145,7 @@
     // ---------- FLOATING ELEMENTS ----------
     const floatingHTML = `
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/919025676853?text=Hello%20Fly%20Digital%20Solution%2C%20I%20need%20a%20website"
+    <a href="https://wa.me/919025676853?text=Hello%20First%20Fly%20Digital%20Solutions%2C%20I%20need%20a%20website"
         class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 32 32" aria-hidden="true">
             <path

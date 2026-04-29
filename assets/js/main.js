@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isValid) {
         // Logic: Redirect to WhatsApp with message
         const waMessage = encodeURIComponent(
-          `Hello First Fly Digital!\n\n` +
+          `Hello First Fly Digital Solutions!\n\n` +
           `Name: ${name.value}\n` +
           `Email: ${email.value}\n` +
           `Subject: ${subject ? subject.value : 'General Inquiry'}\n` +
