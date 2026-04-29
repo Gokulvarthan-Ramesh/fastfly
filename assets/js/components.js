@@ -70,11 +70,11 @@
                 </div>
                 <div class="nav-actions-elite">
                     <a href="contact.html" class="btn btn-primary nav-cta">CONTACT</a>
-                    <div class="hamburger" id="hamburger">
+                    <button class="hamburger" id="hamburger" aria-label="Open menu">
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -98,7 +98,7 @@
                 
                 <div class="footer-links-grid">
                     <div class="footer-col">
-                        <h4>Engineering</h4>
+                        <h3>Engineering</h3>
                         <ul>
                             <li><a href="index.html#services">Software & ERP</a></li>
                             <li><a href="index.html#services">Web Engineering</a></li>
@@ -107,7 +107,7 @@
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Studio</h4>
+                        <h3>Studio</h3>
                         <ul>
                             <li><a href="about.html">Our Story</a></li>
                             <li><a href="portfolio.html">Selected Work</a></li>
@@ -116,7 +116,7 @@
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Connect</h4>
+                        <h3>Connect</h3>
                         <div class="footer-contact-glass">
                             <p><i class="fas fa-envelope"></i> firstflydigitalsolutions@gmail.com</p>
                             <p><i class="fas fa-phone-alt"></i> +91 90256 76853</p>
@@ -166,7 +166,7 @@
     <div class="mobile-drawer" id="mobileDrawer">
         <div class="drawer-header">
             <div class="footer-logo-elite"><picture><source srcset="assets/images/Logo1.webp" type="image/webp"><img src="assets/images/Logo1.png" alt="First Fly Digital" width="80" height="70" style="height: 70px; width: auto; transition: 0.3s;"></picture></div>
-            <button id="closeDrawer" class="drawer-close"><i class="fas fa-times"></i></button>
+            <button id="closeDrawer" class="drawer-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
         </div>
         <nav class="drawer-nav">
             <a href="index.html">Home</a>
