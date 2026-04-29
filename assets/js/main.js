@@ -139,26 +139,49 @@ document.addEventListener('DOMContentLoaded', () => {
     slideInterval = setInterval(nextSlide, 5000);
   }
 
-  // ---------- FAQ Accordion V3 ----------
-  const faqItems = document.querySelectorAll('.faq-item-v3');
+  // ---------- FAQ Accordion & Filtering ----------
+  const faqTabs = document.querySelectorAll('.faq-tab');
+  const faqItemsModern = document.querySelectorAll('.faq-item-modern');
   
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question-v3');
+  // Tab Switching Logic
+  faqTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetCat = tab.getAttribute('data-category');
+      
+      // Update active tab
+      faqTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      // Filter items
+      faqItemsModern.forEach(item => {
+        if (item.getAttribute('data-faq-cat') === targetCat) {
+          item.style.display = 'block';
+          // Trigger a small reveal animation if desired
+          item.classList.add('reveal-blur'); 
+        } else {
+          item.style.display = 'none';
+          item.classList.remove("faq-open"); // Close if active
+        }
+      });
+    });
+  });
+
+  // Accordion Logic
+  faqItemsModern.forEach(item => {
+    const question = item.querySelector('.faq-trigger-modern');
     if (question) {
       question.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-        
-        // Close all other items and update ARIA
-        faqItems.forEach(otherItem => {
-          if (otherItem !== item) {
-            otherItem.classList.remove('active');
-            const otherBtn = otherItem.querySelector('.faq-question-v3');
+        // Close all other items in the CURRENT visible category
+        faqItemsModern.forEach(otherItem => {
+          if (otherItem !== item && otherItem.style.display !== 'none') {
+            otherItem.classList.remove("faq-open");
+            const otherBtn = otherItem.querySelector('.faq-trigger-modern');
             if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
           }
         });
         
-        // Toggle current item and update ARIA
-        const isNowActive = item.classList.toggle('active');
+        // Toggle current item
+        const isNowActive = item.classList.toggle("faq-open");
         question.setAttribute('aria-expanded', isNowActive ? 'true' : 'false');
       });
     }
